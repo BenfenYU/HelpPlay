@@ -1,0 +1,580 @@
+2019-02-02 12:50:55,489 DEBUG [urllib3.connectionpool] - Starting new HTTPS connection (1): authorization.shanghaidisneyresort.com:443
+2019-02-02 12:50:55,782 DEBUG [urllib3.connectionpool] - https://authorization.shanghaidisneyresort.com:443 "POST /curoauth/v1/token HTTP/1.1" 200 None
+2019-02-02 12:50:55,800 DEBUG [urllib3.connectionpool] - Starting new HTTPS connection (1): apim.shanghaidisneyresort.com:443
+2019-02-02 12:50:56,014 DEBUG [urllib3.connectionpool] - https://apim.shanghaidisneyresort.com:443 "GET /facility-service/theme-parks/desShanghaiDisneyland;entityType=theme-park;destination=shdr/wait-times?mobile=true&region=&region=CN HTTP/1.1" 200 None
+2019-02-02 12:50:56,041 INFO [__main__] - CampDiscovery wait: 0m; singleRider: False; FP: {'available': False};
+2019-02-02 12:50:56,043 INFO [__main__] - 古迹探索营的绳索挑战道/古迹探索营 wait: 60m; singleRider: False; FP: {'available': False};
+2019-02-02 12:50:56,045 INFO [__main__] - 古迹探索营的探索步行道/古迹探索营 wait: Nonem; singleRider: False; FP: {'available': False};
+2019-02-02 12:50:56,047 INFO [__main__] - 欢笑聚友会的丛林迪士尼朋友们 wait: 20m; singleRider: False; FP: {'available': False};
+2019-02-02 12:50:56,048 INFO [__main__] - 翱翔.飞跃地平线 wait: 135m; singleRider: False; FP: {'startTime': 'FASTPASS is Not Available', 'available': True};
+2019-02-02 12:50:56,050 INFO [__main__] - 漫游童话时光 wait: 5m; singleRider: False; FP: {'available': False};
+2019-02-02 12:50:56,051 INFO [__main__] - 爱丽丝梦游仙境迷宫 wait: 5m; singleRider: False; FP: {'available': False};
+2019-02-02 12:50:56,052 INFO [__main__] - 旋转疯蜜罐 wait: 10m; singleRider: False; FP: {'available': False};
+2019-02-02 12:50:56,053 INFO [__main__] - 奇幻童话城堡里的迪士尼公主们 wait: 60m; singleRider: False; FP: {'available': False};
+2019-02-02 12:50:56,054 INFO [__main__] - 小飞侠天空奇遇 wait: 45m; singleRider: False; FP: {'startTime': 'FASTPASS is Not Available', 'available': True};
+2019-02-02 12:50:56,056 INFO [__main__] - 七个小矮人矿山车 wait: 100m; singleRider: True; FP: {'startTime': 'FASTPASS is Not Available', 'available': True};
+2019-02-02 12:50:56,057 INFO [__main__] - 小熊维尼历险记 wait: 30m; singleRider: False; FP: {'startTime': 'FASTPASS is Not Available', 'available': True};
+2019-02-02 12:50:56,058 INFO [__main__] - 晶彩奇航 wait: 30m; singleRider: False; FP: {'available': False};
+2019-02-02 12:50:56,059 INFO [__main__] - 小飞象 wait: 50m; singleRider: False; FP: {'available': False};
+2019-02-02 12:50:56,061 INFO [__main__] - 幻想曲旋转木马 wait: 40m; singleRider: False; FP: {'available': False};
+2019-02-02 12:50:56,062 INFO [__main__] - 奇想花园的米奇俱乐部 wait: 30m; singleRider: False; FP: {'available': False};
+2019-02-02 12:50:56,063 INFO [__main__] - 漫威英雄总部的美国队长/漫威英雄总部 wait: 5m; singleRider: False; FP: {'available': False};
+2019-02-02 12:50:56,065 INFO [__main__] - 与星球大战里的机器人朋友见面/星球大战远征基地/银河帝国贸易站 wait: 0m; singleRider: False; FP: {'available': False};
+2019-02-02 12:50:56,066 INFO [__main__] - 创急速光轮 wait: 50m; singleRider: True; FP: {'startTime': 'FASTPASS is Not Available', 'available': True};
+2019-02-02 12:50:56,067 INFO [__main__] - 太空幸会史迪奇 wait: 15m; singleRider: False; FP: {'available': False};
+2019-02-02 12:50:56,068 INFO [__main__] - 喷气背包飞行器 wait: 50m; singleRider: False; FP: {'available': False};
+2019-02-02 12:50:56,069 INFO [__main__] - 巴斯光年星际营救 wait: 30m; singleRider: False; FP: {'startTime': 'FASTPASS is Not Available', 'available': True};
+2019-02-02 12:50:56,070 INFO [__main__] - 探秘海妖复仇号 wait: 5m; singleRider: False; FP: {'available': False};
+2019-02-02 12:50:56,076 INFO [__main__] - 传奇戏水滩 wait: 5m; singleRider: False; FP: {'available': False};
+2019-02-02 12:50:56,082 INFO [__main__] - 加勒比海盗——沉落宝藏之战 wait: 30m; singleRider: True; FP: {'available': False};
+2019-02-02 12:50:56,085 INFO [__main__] - 探险家独木舟 wait: 50m; singleRider: False; FP: {'available': False};
+2019-02-02 12:50:56,085 INFO [__main__] - 雷鸣山漂流 wait: 50m; singleRider: False; FP: {'startTime': 'FASTPASS is Not Available', 'available': True};
+2019-02-02 12:50:56,086 INFO [__main__] - 星球大战远征基地/星球大战远征基地/银河帝国贸易站 wait: 0m; singleRider: False; FP: {'available': False};
+2019-02-02 12:50:56,087 INFO [__main__] - TronRealm maybe 米妮和朋友们 wait: Nonem; singleRider: False; FP: {'available': False};
+2019-02-02 12:50:56,088 INFO [__main__] - 抱抱龙冲天赛车 wait: 40m; singleRider: False; FP: {'available': True};
+2019-02-02 12:50:56,090 INFO [__main__] - 弹簧狗团团转 wait: 50m; singleRider: False; FP: {'available': False};
+2019-02-02 12:50:56,091 INFO [__main__] - 胡迪牛仔嘉年华 wait: 30m; singleRider: False; FP: {'available': False};
+2019-02-02 12:50:56,093 INFO [__main__] - 米奇电影节 wait: nanm; singleRider: False; FP: {'available': False};
+2019-02-02 12:50:56,094 INFO [__main__] - MarvelUniverse maybe 十二朋友园 wait: 0m; singleRider: False; FP: {'available': False};
+2019-02-02 12:50:56,096 INFO [__main__] - 电影放映室/星球大战远征基地/银河帝国贸易站 wait: 0m; singleRider: False; FP: {'available': False};
+2019-02-02 12:50:56,097 INFO [__main__] - 星球大战远征基地的达斯.维达/星球大战远征基地/银河帝国贸易站 wait: 0m; singleRider: False; FP: {'available': False};
+2019-02-02 12:50:56,098 INFO [__main__] - 星球大战远征基地的凯洛.伦/星球大战远征基地/银河帝国贸易站 wait: 0m; singleRider: False; FP: {'available': False};
+2019-02-02 12:50:56,099 INFO [__main__] - 千年隼号/星球大战远征基地/银河帝国贸易站 wait: 0m; singleRider: False; FP: {'available': False};
+2019-02-02 12:50:56,100 INFO [__main__] - 漫威英雄总部的蜘蛛侠/漫威英雄总部 wait: 30m; singleRider: False; FP: {'available': False};
+2019-02-02 12:50:56,101 INFO [__main__] - 变身钢铁侠/漫威英雄总部 wait: 10m; singleRider: False; FP: {'available': False};
+2019-02-02 13:04:43,945 DEBUG [urllib3.connectionpool] - Starting new HTTP connection (1): localhost:8086
+2019-02-02 13:04:43,968 DEBUG [urllib3.connectionpool] - Starting new HTTP connection (2): localhost:8086
+2019-02-02 13:04:43,981 DEBUG [urllib3.connectionpool] - Starting new HTTP connection (3): localhost:8086
+2019-02-02 13:04:43,991 ERROR [__main__] - exception
+Traceback (most recent call last):
+  File "/home/benfen/.local/lib/python3.6/site-packages/urllib3/connection.py", line 171, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "/home/benfen/.local/lib/python3.6/site-packages/urllib3/util/connection.py", line 79, in create_connection
+    raise err
+  File "/home/benfen/.local/lib/python3.6/site-packages/urllib3/util/connection.py", line 69, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/benfen/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/home/benfen/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 354, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python3.6/http/client.py", line 1239, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/usr/lib/python3.6/http/client.py", line 1285, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.6/http/client.py", line 1234, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.6/http/client.py", line 1026, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.6/http/client.py", line 964, in send
+    self.connect()
+  File "/home/benfen/.local/lib/python3.6/site-packages/urllib3/connection.py", line 196, in connect
+    conn = self._new_conn()
+  File "/home/benfen/.local/lib/python3.6/site-packages/urllib3/connection.py", line 180, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f8cbb3edcc0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/benfen/.local/lib/python3.6/site-packages/requests/adapters.py", line 449, in send
+    timeout=timeout
+  File "/home/benfen/.local/lib/python3.6/site-packages/urllib3/connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/home/benfen/.local/lib/python3.6/site-packages/urllib3/util/retry.py", line 398, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=8086): Max retries exceeded with url: /query?q=CREATE+DATABASE+%22disney%22&db=disney (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f8cbb3edcc0>: Failed to establish a new connection: [Errno 111] Connection refused',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/benfen/PersonalProject/迪士尼旅行推荐/wait4disney-master/wait4disney-master/disney/fetch.py", line 50, in <module>
+    main()
+  File "/home/benfen/PersonalProject/迪士尼旅行推荐/wait4disney-master/wait4disney-master/disney/fetch.py", line 42, in main
+    db = get_influxdb()
+  File "/home/benfen/PersonalProject/迪士尼旅行推荐/wait4disney-master/wait4disney-master/disney/fetch.py", line 37, in get_influxdb
+    db.create_database(config.INFLUXDB_DB)
+  File "/home/benfen/.local/lib/python3.6/site-packages/influxdb/client.py", line 579, in create_database
+    method="POST")
+  File "/home/benfen/.local/lib/python3.6/site-packages/influxdb/client.py", line 416, in query
+    expected_response_code=expected_response_code
+  File "/home/benfen/.local/lib/python3.6/site-packages/influxdb/client.py", line 267, in request
+    timeout=self._timeout
+  File "/home/benfen/.local/lib/python3.6/site-packages/requests/sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/benfen/.local/lib/python3.6/site-packages/requests/sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/benfen/.local/lib/python3.6/site-packages/requests/adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=8086): Max retries exceeded with url: /query?q=CREATE+DATABASE+%22disney%22&db=disney (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f8cbb3edcc0>: Failed to establish a new connection: [Errno 111] Connection refused',))
+2019-02-02 13:06:05,071 DEBUG [urllib3.connectionpool] - Starting new HTTP connection (1): localhost:8086
+2019-02-02 13:06:05,082 DEBUG [urllib3.connectionpool] - http://localhost:8086 "POST /query?q=CREATE+DATABASE+%22disney%22&db=disney HTTP/1.1" 200 None
+2019-02-02 13:06:31,727 DEBUG [urllib3.connectionpool] - Starting new HTTPS connection (1): authorization.shanghaidisneyresort.com:443
+2019-02-02 13:06:31,997 DEBUG [urllib3.connectionpool] - https://authorization.shanghaidisneyresort.com:443 "POST /curoauth/v1/token HTTP/1.1" 200 None
+2019-02-02 13:06:32,015 DEBUG [urllib3.connectionpool] - Starting new HTTPS connection (1): apim.shanghaidisneyresort.com:443
+2019-02-02 13:06:32,493 DEBUG [urllib3.connectionpool] - https://apim.shanghaidisneyresort.com:443 "GET /facility-service/theme-parks/desShanghaiDisneyland;entityType=theme-park;destination=shdr/wait-times?mobile=true&region=&region=CN HTTP/1.1" 200 15525
+2019-02-02 13:06:32,536 INFO [__main__] - CampDiscovery wait: 0m; singleRider: False; FP: {'available': False};
+2019-02-02 13:06:32,539 INFO [__main__] - 古迹探索营的绳索挑战道/古迹探索营 wait: 60m; singleRider: False; FP: {'available': False};
+2019-02-02 13:06:32,541 INFO [__main__] - 古迹探索营的探索步行道/古迹探索营 wait: Nonem; singleRider: False; FP: {'available': False};
+2019-02-02 13:06:32,542 INFO [__main__] - 欢笑聚友会的丛林迪士尼朋友们 wait: 20m; singleRider: False; FP: {'available': False};
+2019-02-02 13:06:32,543 INFO [__main__] - 翱翔.飞跃地平线 wait: 150m; singleRider: False; FP: {'startTime': 'FASTPASS is Not Available', 'available': True};
+2019-02-02 13:06:32,544 INFO [__main__] - 漫游童话时光 wait: 10m; singleRider: False; FP: {'available': False};
+2019-02-02 13:06:32,544 INFO [__main__] - 爱丽丝梦游仙境迷宫 wait: 5m; singleRider: False; FP: {'available': False};
+2019-02-02 13:06:32,545 INFO [__main__] - 旋转疯蜜罐 wait: 20m; singleRider: False; FP: {'available': False};
+2019-02-02 13:06:32,546 INFO [__main__] - 奇幻童话城堡里的迪士尼公主们 wait: 60m; singleRider: False; FP: {'available': False};
+2019-02-02 13:06:32,547 INFO [__main__] - 小飞侠天空奇遇 wait: 50m; singleRider: False; FP: {'startTime': 'FASTPASS is Not Available', 'available': True};
+2019-02-02 13:06:32,548 INFO [__main__] - 七个小矮人矿山车 wait: 105m; singleRider: True; FP: {'startTime': 'FASTPASS is Not Available', 'available': True};
+2019-02-02 13:06:32,550 INFO [__main__] - 小熊维尼历险记 wait: 70m; singleRider: False; FP: {'startTime': 'FASTPASS is Not Available', 'available': True};
+2019-02-02 13:06:32,558 INFO [__main__] - 晶彩奇航 wait: 30m; singleRider: False; FP: {'available': False};
+2019-02-02 13:06:32,560 INFO [__main__] - 小飞象 wait: 40m; singleRider: False; FP: {'available': False};
+2019-02-02 13:06:32,561 INFO [__main__] - 幻想曲旋转木马 wait: 40m; singleRider: False; FP: {'available': False};
+2019-02-02 13:06:32,562 INFO [__main__] - 奇想花园的米奇俱乐部 wait: 30m; singleRider: False; FP: {'available': False};
+2019-02-02 13:06:32,563 INFO [__main__] - 漫威英雄总部的美国队长/漫威英雄总部 wait: 5m; singleRider: False; FP: {'available': False};
+2019-02-02 13:06:32,563 INFO [__main__] - 与星球大战里的机器人朋友见面/星球大战远征基地/银河帝国贸易站 wait: 0m; singleRider: False; FP: {'available': False};
+2019-02-02 13:06:32,564 INFO [__main__] - 创急速光轮 wait: 60m; singleRider: True; FP: {'startTime': 'FASTPASS is Not Available', 'available': True};
+2019-02-02 13:06:32,565 INFO [__main__] - 太空幸会史迪奇 wait: 15m; singleRider: False; FP: {'available': False};
+2019-02-02 13:06:32,567 INFO [__main__] - 喷气背包飞行器 wait: 50m; singleRider: False; FP: {'available': False};
+2019-02-02 13:06:32,568 INFO [__main__] - 巴斯光年星际营救 wait: 30m; singleRider: False; FP: {'startTime': 'FASTPASS is Not Available', 'available': True};
+2019-02-02 13:06:32,569 INFO [__main__] - 探秘海妖复仇号 wait: 5m; singleRider: False; FP: {'available': False};
+2019-02-02 13:06:32,570 INFO [__main__] - 传奇戏水滩 wait: 5m; singleRider: False; FP: {'available': False};
+2019-02-02 13:06:32,572 INFO [__main__] - 加勒比海盗——沉落宝藏之战 wait: 40m; singleRider: True; FP: {'available': False};
+2019-02-02 13:06:32,574 INFO [__main__] - 探险家独木舟 wait: 50m; singleRider: False; FP: {'available': False};
+2019-02-02 13:06:32,580 INFO [__main__] - 雷鸣山漂流 wait: 60m; singleRider: False; FP: {'startTime': 'FASTPASS is Not Available', 'available': True};
+2019-02-02 13:06:32,583 INFO [__main__] - 星球大战远征基地/星球大战远征基地/银河帝国贸易站 wait: 0m; singleRider: False; FP: {'available': False};
+2019-02-02 13:06:32,584 INFO [__main__] - TronRealm maybe 米妮和朋友们 wait: Nonem; singleRider: False; FP: {'available': False};
+2019-02-02 13:06:32,588 INFO [__main__] - 抱抱龙冲天赛车 wait: 60m; singleRider: False; FP: {'available': True};
+2019-02-02 13:06:32,591 INFO [__main__] - 弹簧狗团团转 wait: 40m; singleRider: False; FP: {'available': False};
+2019-02-02 13:06:32,593 INFO [__main__] - 胡迪牛仔嘉年华 wait: 30m; singleRider: False; FP: {'available': False};
+2019-02-02 13:06:32,594 INFO [__main__] - 米奇电影节 wait: nanm; singleRider: False; FP: {'available': False};
+2019-02-02 13:06:32,595 INFO [__main__] - MarvelUniverse maybe 十二朋友园 wait: 0m; singleRider: False; FP: {'available': False};
+2019-02-02 13:06:32,598 INFO [__main__] - 电影放映室/星球大战远征基地/银河帝国贸易站 wait: 0m; singleRider: False; FP: {'available': False};
+2019-02-02 13:06:32,599 INFO [__main__] - 星球大战远征基地的达斯.维达/星球大战远征基地/银河帝国贸易站 wait: 0m; singleRider: False; FP: {'available': False};
+2019-02-02 13:06:32,601 INFO [__main__] - 星球大战远征基地的凯洛.伦/星球大战远征基地/银河帝国贸易站 wait: 0m; singleRider: False; FP: {'available': False};
+2019-02-02 13:06:32,602 INFO [__main__] - 千年隼号/星球大战远征基地/银河帝国贸易站 wait: 0m; singleRider: False; FP: {'available': False};
+2019-02-02 13:06:32,603 INFO [__main__] - 漫威英雄总部的蜘蛛侠/漫威英雄总部 wait: 30m; singleRider: False; FP: {'available': False};
+2019-02-02 13:06:32,605 INFO [__main__] - 变身钢铁侠/漫威英雄总部 wait: 10m; singleRider: False; FP: {'available': False};
+2019-02-02 13:06:32,621 DEBUG [urllib3.connectionpool] - Resetting dropped connection: localhost
+2019-02-02 13:06:32,634 DEBUG [urllib3.connectionpool] - http://localhost:8086 "POST /write?db=disney HTTP/1.1" 400 263
+2019-02-02 13:06:32,637 ERROR [__main__] - exception
+Traceback (most recent call last):
+  File "/home/benfen/PersonalProject/迪士尼旅行推荐/wait4disney-master/wait4disney-master/disney/fetch.py", line 50, in <module>
+    main()
+  File "/home/benfen/PersonalProject/迪士尼旅行推荐/wait4disney-master/wait4disney-master/disney/fetch.py", line 45, in main
+    assert db.write_points(datapoints, database='disney', batch_size=50)
+  File "/home/benfen/.local/lib/python3.6/site-packages/influxdb/client.py", line 483, in write_points
+    tags=tags, protocol=protocol)
+  File "/home/benfen/.local/lib/python3.6/site-packages/influxdb/client.py", line 551, in _write_points
+    protocol=protocol
+  File "/home/benfen/.local/lib/python3.6/site-packages/influxdb/client.py", line 327, in write
+    headers=headers
+  File "/home/benfen/.local/lib/python3.6/site-packages/influxdb/client.py", line 286, in request
+    raise InfluxDBClientError(response.content, response.status_code)
+influxdb.exceptions.InfluxDBClientError: 400: {"error":"partial write:\nunable to parse 'wait_minutes,name=VistaTrail,name_zh=古迹探索营的探索步行道/古迹探索营 ': invalid field format\nunable to parse 'wait_minutes,name=TronRealm,name_zh=TronRealm\\ maybe\\ 米妮和朋友们 ': invalid field format\nunable to parse 'wait_minutes,name=MickeysFilmFestival,name_zh=米奇电影节 value=nan': invalid number"}
+
+2019-02-02 13:50:07,132 DEBUG [urllib3.connectionpool] - Starting new HTTP connection (1): localhost:8086
+2019-02-02 13:50:07,139 DEBUG [urllib3.connectionpool] - http://localhost:8086 "POST /query?q=CREATE+DATABASE+%22disney%22&db=disney HTTP/1.1" 200 None
+2019-02-02 13:50:07,157 DEBUG [urllib3.connectionpool] - Starting new HTTPS connection (1): authorization.shanghaidisneyresort.com:443
+2019-02-02 13:50:07,474 DEBUG [urllib3.connectionpool] - https://authorization.shanghaidisneyresort.com:443 "POST /curoauth/v1/token HTTP/1.1" 200 None
+2019-02-02 13:50:07,495 DEBUG [urllib3.connectionpool] - Starting new HTTPS connection (1): apim.shanghaidisneyresort.com:443
+2019-02-02 13:50:07,697 DEBUG [urllib3.connectionpool] - https://apim.shanghaidisneyresort.com:443 "GET /facility-service/theme-parks/desShanghaiDisneyland;entityType=theme-park;destination=shdr/wait-times?mobile=true&region=&region=CN HTTP/1.1" 200 15526
+2019-02-02 13:50:07,735 INFO [__main__] - CampDiscovery wait: 0m; singleRider: False; FP: {'available': False};
+2019-02-02 13:50:07,736 INFO [__main__] - 古迹探索营的绳索挑战道/古迹探索营 wait: 60m; singleRider: False; FP: {'available': False};
+2019-02-02 13:50:07,738 INFO [__main__] - 古迹探索营的探索步行道/古迹探索营 wait: Nonem; singleRider: False; FP: {'available': False};
+2019-02-02 13:50:07,739 INFO [__main__] - 欢笑聚友会的丛林迪士尼朋友们 wait: 10m; singleRider: False; FP: {'available': False};
+2019-02-02 13:50:07,740 INFO [__main__] - 翱翔.飞跃地平线 wait: 135m; singleRider: False; FP: {'startTime': 'FASTPASS is Not Available', 'available': True};
+2019-02-02 13:50:07,742 INFO [__main__] - 漫游童话时光 wait: 20m; singleRider: False; FP: {'available': False};
+2019-02-02 13:50:07,746 INFO [__main__] - 爱丽丝梦游仙境迷宫 wait: 5m; singleRider: False; FP: {'available': False};
+2019-02-02 13:50:07,747 INFO [__main__] - 旋转疯蜜罐 wait: 20m; singleRider: False; FP: {'available': False};
+2019-02-02 13:50:07,748 INFO [__main__] - 奇幻童话城堡里的迪士尼公主们 wait: 60m; singleRider: False; FP: {'available': False};
+2019-02-02 13:50:07,751 INFO [__main__] - 小飞侠天空奇遇 wait: 50m; singleRider: False; FP: {'startTime': 'FASTPASS is Not Available', 'available': True};
+2019-02-02 13:50:07,753 INFO [__main__] - 七个小矮人矿山车 wait: 120m; singleRider: True; FP: {'startTime': 'FASTPASS is Not Available', 'available': True};
+2019-02-02 13:50:07,754 INFO [__main__] - 小熊维尼历险记 wait: 50m; singleRider: False; FP: {'startTime': 'FASTPASS is Not Available', 'available': True};
+2019-02-02 13:50:07,756 INFO [__main__] - 晶彩奇航 wait: 30m; singleRider: False; FP: {'available': False};
+2019-02-02 13:50:07,757 INFO [__main__] - 小飞象 wait: 40m; singleRider: False; FP: {'available': False};
+2019-02-02 13:50:07,758 INFO [__main__] - 幻想曲旋转木马 wait: 20m; singleRider: False; FP: {'available': False};
+2019-02-02 13:50:07,761 INFO [__main__] - 奇想花园的米奇俱乐部 wait: 20m; singleRider: False; FP: {'available': False};
+2019-02-02 13:50:07,765 INFO [__main__] - 漫威英雄总部的美国队长/漫威英雄总部 wait: 20m; singleRider: False; FP: {'available': False};
+2019-02-02 13:50:07,766 INFO [__main__] - 与星球大战里的机器人朋友见面/星球大战远征基地/银河帝国贸易站 wait: 0m; singleRider: False; FP: {'available': False};
+2019-02-02 13:50:07,767 INFO [__main__] - 创急速光轮 wait: 50m; singleRider: True; FP: {'startTime': 'FASTPASS is Not Available', 'available': True};
+2019-02-02 13:50:07,775 INFO [__main__] - 太空幸会史迪奇 wait: 15m; singleRider: False; FP: {'available': False};
+2019-02-02 13:50:07,780 INFO [__main__] - 喷气背包飞行器 wait: 50m; singleRider: False; FP: {'available': False};
+2019-02-02 13:50:07,781 INFO [__main__] - 巴斯光年星际营救 wait: 30m; singleRider: False; FP: {'startTime': 'FASTPASS is Not Available', 'available': True};
+2019-02-02 13:50:07,784 INFO [__main__] - 探秘海妖复仇号 wait: 5m; singleRider: False; FP: {'available': False};
+2019-02-02 13:50:07,788 INFO [__main__] - 传奇戏水滩 wait: 5m; singleRider: False; FP: {'available': False};
+2019-02-02 13:50:07,789 INFO [__main__] - 加勒比海盗——沉落宝藏之战 wait: 30m; singleRider: True; FP: {'available': False};
+2019-02-02 13:50:07,790 INFO [__main__] - 探险家独木舟 wait: 40m; singleRider: False; FP: {'available': False};
+2019-02-02 13:50:07,791 INFO [__main__] - 雷鸣山漂流 wait: 50m; singleRider: False; FP: {'startTime': 'FASTPASS is Not Available', 'available': True};
+2019-02-02 13:50:07,793 INFO [__main__] - 星球大战远征基地/星球大战远征基地/银河帝国贸易站 wait: 0m; singleRider: False; FP: {'available': False};
+2019-02-02 13:50:07,794 INFO [__main__] - TronRealm maybe 米妮和朋友们 wait: Nonem; singleRider: False; FP: {'available': False};
+2019-02-02 13:50:07,795 INFO [__main__] - 抱抱龙冲天赛车 wait: 75m; singleRider: False; FP: {'available': True};
+2019-02-02 13:50:07,796 INFO [__main__] - 弹簧狗团团转 wait: 50m; singleRider: False; FP: {'available': False};
+2019-02-02 13:50:07,797 INFO [__main__] - 胡迪牛仔嘉年华 wait: 30m; singleRider: False; FP: {'available': False};
+2019-02-02 13:50:07,798 INFO [__main__] - 米奇电影节 wait: nanm; singleRider: False; FP: {'available': False};
+2019-02-02 13:50:07,799 INFO [__main__] - MarvelUniverse maybe 十二朋友园 wait: 0m; singleRider: False; FP: {'available': False};
+2019-02-02 13:50:07,801 INFO [__main__] - 电影放映室/星球大战远征基地/银河帝国贸易站 wait: 0m; singleRider: False; FP: {'available': False};
+2019-02-02 13:50:07,804 INFO [__main__] - 星球大战远征基地的达斯.维达/星球大战远征基地/银河帝国贸易站 wait: 0m; singleRider: False; FP: {'available': False};
+2019-02-02 13:50:07,805 INFO [__main__] - 星球大战远征基地的凯洛.伦/星球大战远征基地/银河帝国贸易站 wait: 0m; singleRider: False; FP: {'available': False};
+2019-02-02 13:50:07,807 INFO [__main__] - 千年隼号/星球大战远征基地/银河帝国贸易站 wait: 0m; singleRider: False; FP: {'available': False};
+2019-02-02 13:50:07,810 INFO [__main__] - 漫威英雄总部的蜘蛛侠/漫威英雄总部 wait: 20m; singleRider: False; FP: {'available': False};
+2019-02-02 13:50:07,812 INFO [__main__] - 变身钢铁侠/漫威英雄总部 wait: 10m; singleRider: False; FP: {'available': False};
+2019-02-02 13:50:11,317 DEBUG [urllib3.connectionpool] - Resetting dropped connection: localhost
+2019-02-02 13:50:11,323 DEBUG [urllib3.connectionpool] - http://localhost:8086 "POST /write?db=disney HTTP/1.1" 400 263
+2019-02-02 13:50:11,327 ERROR [__main__] - exception
+Traceback (most recent call last):
+  File "/home/benfen/PersonalProject/迪士尼旅行推荐/wait4disney-master/wait4disney-master/disney/fetch.py", line 50, in <module>
+    main()
+  File "/home/benfen/PersonalProject/迪士尼旅行推荐/wait4disney-master/wait4disney-master/disney/fetch.py", line 45, in main
+    assert db.write_points(datapoints, database='disney', batch_size=50)
+  File "/home/benfen/.local/lib/python3.6/site-packages/influxdb/client.py", line 483, in write_points
+    tags=tags, protocol=protocol)
+  File "/home/benfen/.local/lib/python3.6/site-packages/influxdb/client.py", line 551, in _write_points
+    protocol=protocol
+  File "/home/benfen/.local/lib/python3.6/site-packages/influxdb/client.py", line 327, in write
+    headers=headers
+  File "/home/benfen/.local/lib/python3.6/site-packages/influxdb/client.py", line 286, in request
+    raise InfluxDBClientError(response.content, response.status_code)
+influxdb.exceptions.InfluxDBClientError: 400: {"error":"partial write:\nunable to parse 'wait_minutes,name=VistaTrail,name_zh=古迹探索营的探索步行道/古迹探索营 ': invalid field format\nunable to parse 'wait_minutes,name=TronRealm,name_zh=TronRealm\\ maybe\\ 米妮和朋友们 ': invalid field format\nunable to parse 'wait_minutes,name=MickeysFilmFestival,name_zh=米奇电影节 value=nan': invalid number"}
+
+2019-02-02 14:04:31,243 DEBUG [urllib3.connectionpool] - Starting new HTTP connection (1): localhost:8086
+2019-02-02 14:04:31,249 DEBUG [urllib3.connectionpool] - http://localhost:8086 "POST /query?q=CREATE+DATABASE+%22disney%22&db=disney HTTP/1.1" 200 None
+2019-02-02 14:04:31,266 DEBUG [urllib3.connectionpool] - Starting new HTTPS connection (1): authorization.shanghaidisneyresort.com:443
+2019-02-02 14:04:31,556 DEBUG [urllib3.connectionpool] - https://authorization.shanghaidisneyresort.com:443 "POST /curoauth/v1/token HTTP/1.1" 200 None
+2019-02-02 14:04:31,569 DEBUG [urllib3.connectionpool] - Starting new HTTPS connection (1): apim.shanghaidisneyresort.com:443
+2019-02-02 14:04:31,776 DEBUG [urllib3.connectionpool] - https://apim.shanghaidisneyresort.com:443 "GET /facility-service/theme-parks/desShanghaiDisneyland;entityType=theme-park;destination=shdr/wait-times?mobile=true&region=&region=CN HTTP/1.1" 200 None
+2019-02-02 14:04:31,813 INFO [__main__] - CampDiscovery wait: 0m; singleRider: False; FP: {'available': False};
+2019-02-02 14:04:31,815 INFO [__main__] - 古迹探索营的绳索挑战道/古迹探索营 wait: 60m; singleRider: False; FP: {'available': False};
+2019-02-02 14:04:31,817 INFO [__main__] - 古迹探索营的探索步行道/古迹探索营 wait: Nonem; singleRider: False; FP: {'available': False};
+2019-02-02 14:04:31,818 INFO [__main__] - 欢笑聚友会的丛林迪士尼朋友们 wait: 10m; singleRider: False; FP: {'available': False};
+2019-02-02 14:04:31,822 INFO [__main__] - 翱翔.飞跃地平线 wait: 135m; singleRider: False; FP: {'startTime': 'FASTPASS is Not Available', 'available': True};
+2019-02-02 14:04:31,824 INFO [__main__] - 漫游童话时光 wait: 20m; singleRider: False; FP: {'available': False};
+2019-02-02 14:04:31,826 INFO [__main__] - 爱丽丝梦游仙境迷宫 wait: 5m; singleRider: False; FP: {'available': False};
+2019-02-02 14:04:31,826 INFO [__main__] - 旋转疯蜜罐 wait: 20m; singleRider: False; FP: {'available': False};
+2019-02-02 14:04:31,828 INFO [__main__] - 奇幻童话城堡里的迪士尼公主们 wait: 60m; singleRider: False; FP: {'available': False};
+2019-02-02 14:04:31,829 INFO [__main__] - 小飞侠天空奇遇 wait: 50m; singleRider: False; FP: {'startTime': 'FASTPASS is Not Available', 'available': True};
+2019-02-02 14:04:31,831 INFO [__main__] - 七个小矮人矿山车 wait: 105m; singleRider: True; FP: {'startTime': 'FASTPASS is Not Available', 'available': True};
+2019-02-02 14:04:31,833 INFO [__main__] - 小熊维尼历险记 wait: 50m; singleRider: False; FP: {'startTime': 'FASTPASS is Not Available', 'available': True};
+2019-02-02 14:04:31,834 INFO [__main__] - 晶彩奇航 wait: 30m; singleRider: False; FP: {'available': False};
+2019-02-02 14:04:31,836 INFO [__main__] - 小飞象 wait: 40m; singleRider: False; FP: {'available': False};
+2019-02-02 14:04:31,837 INFO [__main__] - 幻想曲旋转木马 wait: 30m; singleRider: False; FP: {'available': False};
+2019-02-02 14:04:31,846 INFO [__main__] - 奇想花园的米奇俱乐部 wait: 20m; singleRider: False; FP: {'available': False};
+2019-02-02 14:04:31,847 INFO [__main__] - 漫威英雄总部的美国队长/漫威英雄总部 wait: 20m; singleRider: False; FP: {'available': False};
+2019-02-02 14:04:31,849 INFO [__main__] - 与星球大战里的机器人朋友见面/星球大战远征基地/银河帝国贸易站 wait: 0m; singleRider: False; FP: {'available': False};
+2019-02-02 14:04:31,850 INFO [__main__] - 创急速光轮 wait: 50m; singleRider: True; FP: {'startTime': 'FASTPASS is Not Available', 'available': True};
+2019-02-02 14:04:31,851 INFO [__main__] - 太空幸会史迪奇 wait: 15m; singleRider: False; FP: {'available': False};
+2019-02-02 14:04:31,852 INFO [__main__] - 喷气背包飞行器 wait: 50m; singleRider: False; FP: {'available': False};
+2019-02-02 14:04:31,853 INFO [__main__] - 巴斯光年星际营救 wait: 30m; singleRider: False; FP: {'startTime': 'FASTPASS is Not Available', 'available': True};
+2019-02-02 14:04:31,854 INFO [__main__] - 探秘海妖复仇号 wait: 5m; singleRider: False; FP: {'available': False};
+2019-02-02 14:04:31,855 INFO [__main__] - 传奇戏水滩 wait: 5m; singleRider: False; FP: {'available': False};
+2019-02-02 14:04:31,858 INFO [__main__] - 加勒比海盗——沉落宝藏之战 wait: 30m; singleRider: True; FP: {'available': False};
+2019-02-02 14:04:31,858 INFO [__main__] - 探险家独木舟 wait: 50m; singleRider: False; FP: {'available': False};
+2019-02-02 14:04:31,860 INFO [__main__] - 雷鸣山漂流 wait: 50m; singleRider: False; FP: {'startTime': 'FASTPASS is Not Available', 'available': True};
+2019-02-02 14:04:31,861 INFO [__main__] - 星球大战远征基地/星球大战远征基地/银河帝国贸易站 wait: 0m; singleRider: False; FP: {'available': False};
+2019-02-02 14:04:31,864 INFO [__main__] - TronRealm maybe 米妮和朋友们 wait: Nonem; singleRider: False; FP: {'available': False};
+2019-02-02 14:04:31,865 INFO [__main__] - 抱抱龙冲天赛车 wait: 75m; singleRider: False; FP: {'available': True};
+2019-02-02 14:04:31,868 INFO [__main__] - 弹簧狗团团转 wait: 50m; singleRider: False; FP: {'available': False};
+2019-02-02 14:04:31,869 INFO [__main__] - 胡迪牛仔嘉年华 wait: 30m; singleRider: False; FP: {'available': False};
+2019-02-02 14:04:31,870 INFO [__main__] - 米奇电影节 wait: nanm; singleRider: False; FP: {'available': False};
+2019-02-02 14:04:31,874 INFO [__main__] - MarvelUniverse maybe 十二朋友园 wait: 0m; singleRider: False; FP: {'available': False};
+2019-02-02 14:04:31,875 INFO [__main__] - 电影放映室/星球大战远征基地/银河帝国贸易站 wait: 0m; singleRider: False; FP: {'available': False};
+2019-02-02 14:04:31,876 INFO [__main__] - 星球大战远征基地的达斯.维达/星球大战远征基地/银河帝国贸易站 wait: 0m; singleRider: False; FP: {'available': False};
+2019-02-02 14:04:31,878 INFO [__main__] - 星球大战远征基地的凯洛.伦/星球大战远征基地/银河帝国贸易站 wait: 0m; singleRider: False; FP: {'available': False};
+2019-02-02 14:04:31,879 INFO [__main__] - 千年隼号/星球大战远征基地/银河帝国贸易站 wait: 0m; singleRider: False; FP: {'available': False};
+2019-02-02 14:04:31,880 INFO [__main__] - 漫威英雄总部的蜘蛛侠/漫威英雄总部 wait: 20m; singleRider: False; FP: {'available': False};
+2019-02-02 14:04:31,881 INFO [__main__] - 变身钢铁侠/漫威英雄总部 wait: 10m; singleRider: False; FP: {'available': False};
+2019-02-02 14:04:31,895 DEBUG [urllib3.connectionpool] - Resetting dropped connection: localhost
+2019-02-02 14:04:31,904 DEBUG [urllib3.connectionpool] - http://localhost:8086 "POST /write?db=disney HTTP/1.1" 400 263
+2019-02-02 14:04:31,909 ERROR [__main__] - exception
+Traceback (most recent call last):
+  File "/home/benfen/PersonalProject/迪士尼旅行推荐/wait4disney-master/wait4disney-master/disney/fetch.py", line 53, in <module>
+    main()
+  File "/home/benfen/PersonalProject/迪士尼旅行推荐/wait4disney-master/wait4disney-master/disney/fetch.py", line 45, in main
+    assert db.write_points(datapoints, database='disney', batch_size=50)
+  File "/home/benfen/.local/lib/python3.6/site-packages/influxdb/client.py", line 483, in write_points
+    tags=tags, protocol=protocol)
+  File "/home/benfen/.local/lib/python3.6/site-packages/influxdb/client.py", line 551, in _write_points
+    protocol=protocol
+  File "/home/benfen/.local/lib/python3.6/site-packages/influxdb/client.py", line 327, in write
+    headers=headers
+  File "/home/benfen/.local/lib/python3.6/site-packages/influxdb/client.py", line 286, in request
+    raise InfluxDBClientError(response.content, response.status_code)
+influxdb.exceptions.InfluxDBClientError: 400: {"error":"partial write:\nunable to parse 'wait_minutes,name=VistaTrail,name_zh=古迹探索营的探索步行道/古迹探索营 ': invalid field format\nunable to parse 'wait_minutes,name=TronRealm,name_zh=TronRealm\\ maybe\\ 米妮和朋友们 ': invalid field format\nunable to parse 'wait_minutes,name=MickeysFilmFestival,name_zh=米奇电影节 value=nan': invalid number"}
+
+2019-02-02 14:36:47,550 DEBUG [urllib3.connectionpool] - Starting new HTTP connection (1): localhost:8086
+2019-02-02 14:36:47,557 DEBUG [urllib3.connectionpool] - http://localhost:8086 "POST /query?q=CREATE+DATABASE+%22disney%22&db=disney HTTP/1.1" 200 None
+2019-02-02 14:36:47,574 DEBUG [urllib3.connectionpool] - Starting new HTTPS connection (1): authorization.shanghaidisneyresort.com:443
+2019-02-02 14:36:47,846 DEBUG [urllib3.connectionpool] - https://authorization.shanghaidisneyresort.com:443 "POST /curoauth/v1/token HTTP/1.1" 200 None
+2019-02-02 14:36:47,862 DEBUG [urllib3.connectionpool] - Starting new HTTPS connection (1): apim.shanghaidisneyresort.com:443
+2019-02-02 14:36:48,093 DEBUG [urllib3.connectionpool] - https://apim.shanghaidisneyresort.com:443 "GET /facility-service/theme-parks/desShanghaiDisneyland;entityType=theme-park;destination=shdr/wait-times?mobile=true&region=&region=CN HTTP/1.1" 200 None
+2019-02-02 14:36:48,126 INFO [__main__] - CampDiscovery wait: 0m; singleRider: False; FP: {'available': False};
+2019-02-02 14:36:48,127 INFO [__main__] - 古迹探索营的绳索挑战道/古迹探索营 wait: 90m; singleRider: False; FP: {'available': False};
+2019-02-02 14:36:48,129 INFO [__main__] - 古迹探索营的探索步行道/古迹探索营 wait: Nonem; singleRider: False; FP: {'available': False};
+2019-02-02 14:36:48,132 INFO [__main__] - 欢笑聚友会的丛林迪士尼朋友们 wait: 30m; singleRider: False; FP: {'available': False};
+2019-02-02 14:36:48,133 INFO [__main__] - 翱翔.飞跃地平线 wait: 135m; singleRider: False; FP: {'startTime': 'FASTPASS is Not Available', 'available': True};
+2019-02-02 14:36:48,135 INFO [__main__] - 漫游童话时光 wait: 20m; singleRider: False; FP: {'available': False};
+2019-02-02 14:36:48,136 INFO [__main__] - 爱丽丝梦游仙境迷宫 wait: 5m; singleRider: False; FP: {'available': False};
+2019-02-02 14:36:48,138 INFO [__main__] - 旋转疯蜜罐 wait: 10m; singleRider: False; FP: {'available': False};
+2019-02-02 14:36:48,139 INFO [__main__] - 奇幻童话城堡里的迪士尼公主们 wait: 150m; singleRider: False; FP: {'available': False};
+2019-02-02 14:36:48,140 INFO [__main__] - 小飞侠天空奇遇 wait: 45m; singleRider: False; FP: {'startTime': 'FASTPASS is Not Available', 'available': True};
+2019-02-02 14:36:48,144 INFO [__main__] - 七个小矮人矿山车 wait: 105m; singleRider: True; FP: {'startTime': 'FASTPASS is Not Available', 'available': True};
+2019-02-02 14:36:48,144 INFO [__main__] - 小熊维尼历险记 wait: 50m; singleRider: False; FP: {'startTime': 'FASTPASS is Not Available', 'available': True};
+2019-02-02 14:36:48,146 INFO [__main__] - 晶彩奇航 wait: 30m; singleRider: False; FP: {'available': False};
+2019-02-02 14:36:48,148 INFO [__main__] - 小飞象 wait: 40m; singleRider: False; FP: {'available': False};
+2019-02-02 14:36:48,150 INFO [__main__] - 幻想曲旋转木马 wait: 30m; singleRider: False; FP: {'available': False};
+2019-02-02 14:36:48,151 INFO [__main__] - 奇想花园的米奇俱乐部 wait: 20m; singleRider: False; FP: {'available': False};
+2019-02-02 14:36:48,153 INFO [__main__] - 漫威英雄总部的美国队长/漫威英雄总部 wait: 20m; singleRider: False; FP: {'available': False};
+2019-02-02 14:36:48,155 INFO [__main__] - 与星球大战里的机器人朋友见面/星球大战远征基地/银河帝国贸易站 wait: 0m; singleRider: False; FP: {'available': False};
+2019-02-02 14:36:48,157 INFO [__main__] - 创急速光轮 wait: 40m; singleRider: True; FP: {'startTime': 'FASTPASS is Not Available', 'available': True};
+2019-02-02 14:36:48,158 INFO [__main__] - 太空幸会史迪奇 wait: 15m; singleRider: False; FP: {'available': False};
+2019-02-02 14:36:48,160 INFO [__main__] - 喷气背包飞行器 wait: 50m; singleRider: False; FP: {'available': False};
+2019-02-02 14:36:48,163 INFO [__main__] - 巴斯光年星际营救 wait: 20m; singleRider: False; FP: {'startTime': 'FASTPASS is Not Available', 'available': True};
+2019-02-02 14:36:48,164 INFO [__main__] - 探秘海妖复仇号 wait: 5m; singleRider: False; FP: {'available': False};
+2019-02-02 14:36:48,167 INFO [__main__] - 传奇戏水滩 wait: 5m; singleRider: False; FP: {'available': False};
+2019-02-02 14:36:48,170 INFO [__main__] - 加勒比海盗——沉落宝藏之战 wait: 30m; singleRider: True; FP: {'available': False};
+2019-02-02 14:36:48,172 INFO [__main__] - 探险家独木舟 wait: 75m; singleRider: False; FP: {'available': False};
+2019-02-02 14:36:48,173 INFO [__main__] - 雷鸣山漂流 wait: 50m; singleRider: False; FP: {'startTime': 'FASTPASS is Not Available', 'available': True};
+2019-02-02 14:36:48,174 INFO [__main__] - 星球大战远征基地/星球大战远征基地/银河帝国贸易站 wait: 0m; singleRider: False; FP: {'available': False};
+2019-02-02 14:36:48,176 INFO [__main__] - TronRealm maybe 米妮和朋友们 wait: Nonem; singleRider: False; FP: {'available': False};
+2019-02-02 14:36:48,177 INFO [__main__] - 抱抱龙冲天赛车 wait: 75m; singleRider: False; FP: {'available': True};
+2019-02-02 14:36:48,179 INFO [__main__] - 弹簧狗团团转 wait: 50m; singleRider: False; FP: {'available': False};
+2019-02-02 14:36:48,181 INFO [__main__] - 胡迪牛仔嘉年华 wait: 30m; singleRider: False; FP: {'available': False};
+2019-02-02 14:36:48,182 INFO [__main__] - 米奇电影节 wait: -1m; singleRider: False; FP: {'available': False};
+2019-02-02 14:36:48,184 INFO [__main__] - MarvelUniverse maybe 十二朋友园 wait: 0m; singleRider: False; FP: {'available': False};
+2019-02-02 14:36:48,185 INFO [__main__] - 电影放映室/星球大战远征基地/银河帝国贸易站 wait: 0m; singleRider: False; FP: {'available': False};
+2019-02-02 14:36:48,188 INFO [__main__] - 星球大战远征基地的达斯.维达/星球大战远征基地/银河帝国贸易站 wait: 0m; singleRider: False; FP: {'available': False};
+2019-02-02 14:36:48,190 INFO [__main__] - 星球大战远征基地的凯洛.伦/星球大战远征基地/银河帝国贸易站 wait: 0m; singleRider: False; FP: {'available': False};
+2019-02-02 14:36:48,191 INFO [__main__] - 千年隼号/星球大战远征基地/银河帝国贸易站 wait: 0m; singleRider: False; FP: {'available': False};
+2019-02-02 14:36:48,192 INFO [__main__] - 漫威英雄总部的蜘蛛侠/漫威英雄总部 wait: 20m; singleRider: False; FP: {'available': False};
+2019-02-02 14:36:48,193 INFO [__main__] - 变身钢铁侠/漫威英雄总部 wait: 10m; singleRider: False; FP: {'available': False};
+2019-02-02 14:36:48,207 DEBUG [urllib3.connectionpool] - Resetting dropped connection: localhost
+2019-02-02 14:36:48,220 DEBUG [urllib3.connectionpool] - http://localhost:8086 "POST /write?db=disney HTTP/1.1" 400 211
+2019-02-02 14:36:48,224 ERROR [__main__] - exception
+Traceback (most recent call last):
+  File "/home/benfen/PersonalProject/迪士尼旅行推荐/wait4disney-master/wait4disney-master/disney/fetch.py", line 52, in <module>
+    main()
+  File "/home/benfen/PersonalProject/迪士尼旅行推荐/wait4disney-master/wait4disney-master/disney/fetch.py", line 46, in main
+    assert db.write_points(datapoints, database='disney', batch_size=50)
+  File "/home/benfen/.local/lib/python3.6/site-packages/influxdb/client.py", line 483, in write_points
+    tags=tags, protocol=protocol)
+  File "/home/benfen/.local/lib/python3.6/site-packages/influxdb/client.py", line 551, in _write_points
+    protocol=protocol
+  File "/home/benfen/.local/lib/python3.6/site-packages/influxdb/client.py", line 327, in write
+    headers=headers
+  File "/home/benfen/.local/lib/python3.6/site-packages/influxdb/client.py", line 286, in request
+    raise InfluxDBClientError(response.content, response.status_code)
+influxdb.exceptions.InfluxDBClientError: 400: {"error":"partial write:\nunable to parse 'wait_minutes,name=VistaTrail,name_zh=古迹探索营的探索步行道/古迹探索营 ': invalid field format\nunable to parse 'wait_minutes,name=TronRealm,name_zh=TronRealm\\ maybe\\ 米妮和朋友们 ': invalid field format"}
+
+2019-02-02 14:38:34,668 DEBUG [urllib3.connectionpool] - Starting new HTTP connection (1): localhost:8086
+2019-02-02 14:38:34,674 DEBUG [urllib3.connectionpool] - http://localhost:8086 "POST /query?q=CREATE+DATABASE+%22disney%22&db=disney HTTP/1.1" 200 None
+2019-02-02 14:38:34,690 DEBUG [urllib3.connectionpool] - Starting new HTTPS connection (1): authorization.shanghaidisneyresort.com:443
+2019-02-02 14:38:34,982 DEBUG [urllib3.connectionpool] - https://authorization.shanghaidisneyresort.com:443 "POST /curoauth/v1/token HTTP/1.1" 200 None
+2019-02-02 14:38:34,998 DEBUG [urllib3.connectionpool] - Starting new HTTPS connection (1): apim.shanghaidisneyresort.com:443
+2019-02-02 14:38:35,225 DEBUG [urllib3.connectionpool] - https://apim.shanghaidisneyresort.com:443 "GET /facility-service/theme-parks/desShanghaiDisneyland;entityType=theme-park;destination=shdr/wait-times?mobile=true&region=&region=CN HTTP/1.1" 200 None
+2019-02-02 14:38:35,265 INFO [__main__] - CampDiscovery wait: 0m; singleRider: False; FP: {'available': False};
+2019-02-02 14:38:35,267 INFO [__main__] - 古迹探索营的绳索挑战道/古迹探索营 wait: 90m; singleRider: False; FP: {'available': False};
+2019-02-02 14:38:35,270 INFO [__main__] - 古迹探索营的探索步行道/古迹探索营 wait: Nonem; singleRider: False; FP: {'available': False};
+2019-02-02 14:38:35,273 INFO [__main__] - 欢笑聚友会的丛林迪士尼朋友们 wait: 30m; singleRider: False; FP: {'available': False};
+2019-02-02 14:38:35,275 INFO [__main__] - 翱翔.飞跃地平线 wait: 135m; singleRider: False; FP: {'startTime': 'FASTPASS is Not Available', 'available': True};
+2019-02-02 14:38:35,276 INFO [__main__] - 漫游童话时光 wait: 20m; singleRider: False; FP: {'available': False};
+2019-02-02 14:38:35,278 INFO [__main__] - 爱丽丝梦游仙境迷宫 wait: 5m; singleRider: False; FP: {'available': False};
+2019-02-02 14:38:35,279 INFO [__main__] - 旋转疯蜜罐 wait: 15m; singleRider: False; FP: {'available': False};
+2019-02-02 14:38:35,280 INFO [__main__] - 奇幻童话城堡里的迪士尼公主们 wait: 150m; singleRider: False; FP: {'available': False};
+2019-02-02 14:38:35,282 INFO [__main__] - 小飞侠天空奇遇 wait: 50m; singleRider: False; FP: {'startTime': 'FASTPASS is Not Available', 'available': True};
+2019-02-02 14:38:35,283 INFO [__main__] - 七个小矮人矿山车 wait: 105m; singleRider: True; FP: {'startTime': 'FASTPASS is Not Available', 'available': True};
+2019-02-02 14:38:35,284 INFO [__main__] - 小熊维尼历险记 wait: 50m; singleRider: False; FP: {'startTime': 'FASTPASS is Not Available', 'available': True};
+2019-02-02 14:38:35,285 INFO [__main__] - 晶彩奇航 wait: 30m; singleRider: False; FP: {'available': False};
+2019-02-02 14:38:35,287 INFO [__main__] - 小飞象 wait: 40m; singleRider: False; FP: {'available': False};
+2019-02-02 14:38:35,288 INFO [__main__] - 幻想曲旋转木马 wait: 30m; singleRider: False; FP: {'available': False};
+2019-02-02 14:38:35,289 INFO [__main__] - 奇想花园的米奇俱乐部 wait: 20m; singleRider: False; FP: {'available': False};
+2019-02-02 14:38:35,292 INFO [__main__] - 漫威英雄总部的美国队长/漫威英雄总部 wait: 20m; singleRider: False; FP: {'available': False};
+2019-02-02 14:38:35,293 INFO [__main__] - 与星球大战里的机器人朋友见面/星球大战远征基地/银河帝国贸易站 wait: 0m; singleRider: False; FP: {'available': False};
+2019-02-02 14:38:35,294 INFO [__main__] - 创急速光轮 wait: 40m; singleRider: True; FP: {'startTime': 'FASTPASS is Not Available', 'available': True};
+2019-02-02 14:38:35,297 INFO [__main__] - 太空幸会史迪奇 wait: 15m; singleRider: False; FP: {'available': False};
+2019-02-02 14:38:35,297 INFO [__main__] - 喷气背包飞行器 wait: 50m; singleRider: False; FP: {'available': False};
+2019-02-02 14:38:35,299 INFO [__main__] - 巴斯光年星际营救 wait: 20m; singleRider: False; FP: {'startTime': 'FASTPASS is Not Available', 'available': True};
+2019-02-02 14:38:35,300 INFO [__main__] - 探秘海妖复仇号 wait: 5m; singleRider: False; FP: {'available': False};
+2019-02-02 14:38:35,301 INFO [__main__] - 传奇戏水滩 wait: 5m; singleRider: False; FP: {'available': False};
+2019-02-02 14:38:35,302 INFO [__main__] - 加勒比海盗——沉落宝藏之战 wait: 30m; singleRider: True; FP: {'available': False};
+2019-02-02 14:38:35,304 INFO [__main__] - 探险家独木舟 wait: 75m; singleRider: False; FP: {'available': False};
+2019-02-02 14:38:35,305 INFO [__main__] - 雷鸣山漂流 wait: 50m; singleRider: False; FP: {'startTime': 'FASTPASS is Not Available', 'available': True};
+2019-02-02 14:38:35,307 INFO [__main__] - 星球大战远征基地/星球大战远征基地/银河帝国贸易站 wait: 0m; singleRider: False; FP: {'available': False};
+2019-02-02 14:38:35,308 INFO [__main__] - TronRealm maybe 米妮和朋友们 wait: Nonem; singleRider: False; FP: {'available': False};
+2019-02-02 14:38:35,309 INFO [__main__] - 抱抱龙冲天赛车 wait: 75m; singleRider: False; FP: {'available': True};
+2019-02-02 14:38:35,310 INFO [__main__] - 弹簧狗团团转 wait: 50m; singleRider: False; FP: {'available': False};
+2019-02-02 14:38:35,316 INFO [__main__] - 胡迪牛仔嘉年华 wait: 30m; singleRider: False; FP: {'available': False};
+2019-02-02 14:38:35,317 INFO [__main__] - 米奇电影节 wait: -1m; singleRider: False; FP: {'available': False};
+2019-02-02 14:38:35,320 INFO [__main__] - MarvelUniverse maybe 十二朋友园 wait: 0m; singleRider: False; FP: {'available': False};
+2019-02-02 14:38:35,321 INFO [__main__] - 电影放映室/星球大战远征基地/银河帝国贸易站 wait: 0m; singleRider: False; FP: {'available': False};
+2019-02-02 14:38:35,323 INFO [__main__] - 星球大战远征基地的达斯.维达/星球大战远征基地/银河帝国贸易站 wait: 0m; singleRider: False; FP: {'available': False};
+2019-02-02 14:38:35,324 INFO [__main__] - 星球大战远征基地的凯洛.伦/星球大战远征基地/银河帝国贸易站 wait: 0m; singleRider: False; FP: {'available': False};
+2019-02-02 14:38:35,327 INFO [__main__] - 千年隼号/星球大战远征基地/银河帝国贸易站 wait: 0m; singleRider: False; FP: {'available': False};
+2019-02-02 14:38:35,328 INFO [__main__] - 漫威英雄总部的蜘蛛侠/漫威英雄总部 wait: 20m; singleRider: False; FP: {'available': False};
+2019-02-02 14:38:35,329 INFO [__main__] - 变身钢铁侠/漫威英雄总部 wait: 10m; singleRider: False; FP: {'available': False};
+2019-02-02 14:38:35,338 DEBUG [urllib3.connectionpool] - Resetting dropped connection: localhost
+2019-02-02 14:38:35,345 DEBUG [urllib3.connectionpool] - http://localhost:8086 "POST /write?db=disney HTTP/1.1" 400 127
+2019-02-02 14:38:35,348 ERROR [__main__] - exception
+Traceback (most recent call last):
+  File "/home/benfen/PersonalProject/迪士尼旅行推荐/wait4disney-master/wait4disney-master/disney/fetch.py", line 51, in <module>
+    main()
+  File "/home/benfen/PersonalProject/迪士尼旅行推荐/wait4disney-master/wait4disney-master/disney/fetch.py", line 45, in main
+    assert db.write_points(datapoints, database='disney', batch_size=50)
+  File "/home/benfen/.local/lib/python3.6/site-packages/influxdb/client.py", line 483, in write_points
+    tags=tags, protocol=protocol)
+  File "/home/benfen/.local/lib/python3.6/site-packages/influxdb/client.py", line 551, in _write_points
+    protocol=protocol
+  File "/home/benfen/.local/lib/python3.6/site-packages/influxdb/client.py", line 327, in write
+    headers=headers
+  File "/home/benfen/.local/lib/python3.6/site-packages/influxdb/client.py", line 286, in request
+    raise InfluxDBClientError(response.content, response.status_code)
+influxdb.exceptions.InfluxDBClientError: 400: {"error":"partial write:\nunable to parse 'wait_minutes,name=VistaTrail ': invalid field format\nunable to parse 'wait_minutes,name=TronRealm ': invalid field format"}
+
+2019-02-02 14:39:59,487 DEBUG [urllib3.connectionpool] - Starting new HTTP connection (1): localhost:8086
+2019-02-02 14:39:59,493 DEBUG [urllib3.connectionpool] - http://localhost:8086 "POST /query?q=CREATE+DATABASE+%22disney%22&db=disney HTTP/1.1" 200 None
+2019-02-02 14:39:59,505 DEBUG [urllib3.connectionpool] - Starting new HTTPS connection (1): authorization.shanghaidisneyresort.com:443
+2019-02-02 14:39:59,782 DEBUG [urllib3.connectionpool] - https://authorization.shanghaidisneyresort.com:443 "POST /curoauth/v1/token HTTP/1.1" 200 None
+2019-02-02 14:39:59,798 DEBUG [urllib3.connectionpool] - Starting new HTTPS connection (1): apim.shanghaidisneyresort.com:443
+2019-02-02 14:40:00,032 DEBUG [urllib3.connectionpool] - https://apim.shanghaidisneyresort.com:443 "GET /facility-service/theme-parks/desShanghaiDisneyland;entityType=theme-park;destination=shdr/wait-times?mobile=true&region=&region=CN HTTP/1.1" 200 None
+2019-02-02 14:40:00,065 INFO [__main__] - CampDiscovery wait: 0m; singleRider: False; FP: {'available': False};
+2019-02-02 14:40:00,068 INFO [__main__] - 古迹探索营的绳索挑战道/古迹探索营 wait: 90m; singleRider: False; FP: {'available': False};
+2019-02-02 14:40:00,070 INFO [__main__] - 古迹探索营的探索步行道/古迹探索营 wait: Nonem; singleRider: False; FP: {'available': False};
+2019-02-02 14:40:00,071 INFO [__main__] - 欢笑聚友会的丛林迪士尼朋友们 wait: 30m; singleRider: False; FP: {'available': False};
+2019-02-02 14:40:00,072 INFO [__main__] - 翱翔.飞跃地平线 wait: 135m; singleRider: False; FP: {'startTime': 'FASTPASS is Not Available', 'available': True};
+2019-02-02 14:40:00,075 INFO [__main__] - 漫游童话时光 wait: 20m; singleRider: False; FP: {'available': False};
+2019-02-02 14:40:00,076 INFO [__main__] - 爱丽丝梦游仙境迷宫 wait: 5m; singleRider: False; FP: {'available': False};
+2019-02-02 14:40:00,079 INFO [__main__] - 旋转疯蜜罐 wait: 15m; singleRider: False; FP: {'available': False};
+2019-02-02 14:40:00,081 INFO [__main__] - 奇幻童话城堡里的迪士尼公主们 wait: 150m; singleRider: False; FP: {'available': False};
+2019-02-02 14:40:00,083 INFO [__main__] - 小飞侠天空奇遇 wait: 50m; singleRider: False; FP: {'startTime': 'FASTPASS is Not Available', 'available': True};
+2019-02-02 14:40:00,085 INFO [__main__] - 七个小矮人矿山车 wait: 105m; singleRider: True; FP: {'startTime': 'FASTPASS is Not Available', 'available': True};
+2019-02-02 14:40:00,088 INFO [__main__] - 小熊维尼历险记 wait: 50m; singleRider: False; FP: {'startTime': 'FASTPASS is Not Available', 'available': True};
+2019-02-02 14:40:00,089 INFO [__main__] - 晶彩奇航 wait: 30m; singleRider: False; FP: {'available': False};
+2019-02-02 14:40:00,090 INFO [__main__] - 小飞象 wait: 40m; singleRider: False; FP: {'available': False};
+2019-02-02 14:40:00,091 INFO [__main__] - 幻想曲旋转木马 wait: 30m; singleRider: False; FP: {'available': False};
+2019-02-02 14:40:00,093 INFO [__main__] - 奇想花园的米奇俱乐部 wait: 20m; singleRider: False; FP: {'available': False};
+2019-02-02 14:40:00,095 INFO [__main__] - 漫威英雄总部的美国队长/漫威英雄总部 wait: 20m; singleRider: False; FP: {'available': False};
+2019-02-02 14:40:00,097 INFO [__main__] - 与星球大战里的机器人朋友见面/星球大战远征基地/银河帝国贸易站 wait: 0m; singleRider: False; FP: {'available': False};
+2019-02-02 14:40:00,098 INFO [__main__] - 创急速光轮 wait: 40m; singleRider: True; FP: {'startTime': 'FASTPASS is Not Available', 'available': True};
+2019-02-02 14:40:00,106 INFO [__main__] - 太空幸会史迪奇 wait: 15m; singleRider: False; FP: {'available': False};
+2019-02-02 14:40:00,108 INFO [__main__] - 喷气背包飞行器 wait: 50m; singleRider: False; FP: {'available': False};
+2019-02-02 14:40:00,109 INFO [__main__] - 巴斯光年星际营救 wait: 20m; singleRider: False; FP: {'startTime': 'FASTPASS is Not Available', 'available': True};
+2019-02-02 14:40:00,111 INFO [__main__] - 探秘海妖复仇号 wait: 5m; singleRider: False; FP: {'available': False};
+2019-02-02 14:40:00,117 INFO [__main__] - 传奇戏水滩 wait: 5m; singleRider: False; FP: {'available': False};
+2019-02-02 14:40:00,118 INFO [__main__] - 加勒比海盗——沉落宝藏之战 wait: 30m; singleRider: True; FP: {'available': False};
+2019-02-02 14:40:00,120 INFO [__main__] - 探险家独木舟 wait: 75m; singleRider: False; FP: {'available': False};
+2019-02-02 14:40:00,122 INFO [__main__] - 雷鸣山漂流 wait: 50m; singleRider: False; FP: {'startTime': 'FASTPASS is Not Available', 'available': True};
+2019-02-02 14:40:00,124 INFO [__main__] - 星球大战远征基地/星球大战远征基地/银河帝国贸易站 wait: 0m; singleRider: False; FP: {'available': False};
+2019-02-02 14:40:00,126 INFO [__main__] - TronRealm maybe 米妮和朋友们 wait: Nonem; singleRider: False; FP: {'available': False};
+2019-02-02 14:40:00,129 INFO [__main__] - 抱抱龙冲天赛车 wait: 75m; singleRider: False; FP: {'available': True};
+2019-02-02 14:40:00,131 INFO [__main__] - 弹簧狗团团转 wait: 50m; singleRider: False; FP: {'available': False};
+2019-02-02 14:40:00,136 INFO [__main__] - 胡迪牛仔嘉年华 wait: 30m; singleRider: False; FP: {'available': False};
+2019-02-02 14:40:00,137 INFO [__main__] - 米奇电影节 wait: -1m; singleRider: False; FP: {'available': False};
+2019-02-02 14:40:00,140 INFO [__main__] - MarvelUniverse maybe 十二朋友园 wait: 0m; singleRider: False; FP: {'available': False};
+2019-02-02 14:40:00,142 INFO [__main__] - 电影放映室/星球大战远征基地/银河帝国贸易站 wait: 0m; singleRider: False; FP: {'available': False};
+2019-02-02 14:40:00,145 INFO [__main__] - 星球大战远征基地的达斯.维达/星球大战远征基地/银河帝国贸易站 wait: 0m; singleRider: False; FP: {'available': False};
+2019-02-02 14:40:00,147 INFO [__main__] - 星球大战远征基地的凯洛.伦/星球大战远征基地/银河帝国贸易站 wait: 0m; singleRider: False; FP: {'available': False};
+2019-02-02 14:40:00,149 INFO [__main__] - 千年隼号/星球大战远征基地/银河帝国贸易站 wait: 0m; singleRider: False; FP: {'available': False};
+2019-02-02 14:40:00,151 INFO [__main__] - 漫威英雄总部的蜘蛛侠/漫威英雄总部 wait: 20m; singleRider: False; FP: {'available': False};
+2019-02-02 14:40:00,153 INFO [__main__] - 变身钢铁侠/漫威英雄总部 wait: 10m; singleRider: False; FP: {'available': False};
+2019-02-02 14:40:00,165 DEBUG [urllib3.connectionpool] - Resetting dropped connection: localhost
+2019-02-02 14:40:00,172 DEBUG [urllib3.connectionpool] - http://localhost:8086 "POST /write?db=disney HTTP/1.1" 400 127
+2019-02-02 14:40:00,174 ERROR [__main__] - exception
+Traceback (most recent call last):
+  File "/home/benfen/PersonalProject/迪士尼旅行推荐/wait4disney-master/wait4disney-master/disney/fetch.py", line 52, in <module>
+    main()
+  File "/home/benfen/PersonalProject/迪士尼旅行推荐/wait4disney-master/wait4disney-master/disney/fetch.py", line 46, in main
+    assert db.write_points(datapoints, database='disney', batch_size=50)
+  File "/home/benfen/.local/lib/python3.6/site-packages/influxdb/client.py", line 483, in write_points
+    tags=tags, protocol=protocol)
+  File "/home/benfen/.local/lib/python3.6/site-packages/influxdb/client.py", line 551, in _write_points
+    protocol=protocol
+  File "/home/benfen/.local/lib/python3.6/site-packages/influxdb/client.py", line 327, in write
+    headers=headers
+  File "/home/benfen/.local/lib/python3.6/site-packages/influxdb/client.py", line 286, in request
+    raise InfluxDBClientError(response.content, response.status_code)
+influxdb.exceptions.InfluxDBClientError: 400: {"error":"partial write:\nunable to parse 'wait_minutes,name=VistaTrail ': invalid field format\nunable to parse 'wait_minutes,name=TronRealm ': invalid field format"}
+
+2019-02-02 14:44:09,867 DEBUG [urllib3.connectionpool] - Starting new HTTP connection (1): localhost:8086
+2019-02-02 14:44:09,873 DEBUG [urllib3.connectionpool] - http://localhost:8086 "POST /query?q=CREATE+DATABASE+%22disney%22&db=disney HTTP/1.1" 200 None
+2019-02-02 14:44:09,886 DEBUG [urllib3.connectionpool] - Starting new HTTPS connection (1): authorization.shanghaidisneyresort.com:443
+2019-02-02 14:44:10,196 DEBUG [urllib3.connectionpool] - https://authorization.shanghaidisneyresort.com:443 "POST /curoauth/v1/token HTTP/1.1" 200 None
+2019-02-02 14:44:10,218 DEBUG [urllib3.connectionpool] - Starting new HTTPS connection (1): apim.shanghaidisneyresort.com:443
+2019-02-02 14:44:10,397 DEBUG [urllib3.connectionpool] - https://apim.shanghaidisneyresort.com:443 "GET /facility-service/theme-parks/desShanghaiDisneyland;entityType=theme-park;destination=shdr/wait-times?mobile=true&region=&region=CN HTTP/1.1" 200 15527
+2019-02-02 14:44:10,428 INFO [__main__] - 古迹探索营的绳索挑战道/古迹探索营 wait: 90m; singleRider: False; FP: {'available': False};
+2019-02-02 14:44:10,430 INFO [__main__] - 欢笑聚友会的丛林迪士尼朋友们 wait: 20m; singleRider: False; FP: {'available': False};
+2019-02-02 14:44:10,432 INFO [__main__] - 翱翔.飞跃地平线 wait: 135m; singleRider: False; FP: {'startTime': 'FASTPASS is Not Available', 'available': True};
+2019-02-02 14:44:10,436 INFO [__main__] - 漫游童话时光 wait: 20m; singleRider: False; FP: {'available': False};
+2019-02-02 14:44:10,438 INFO [__main__] - 爱丽丝梦游仙境迷宫 wait: 5m; singleRider: False; FP: {'available': False};
+2019-02-02 14:44:10,440 INFO [__main__] - 旋转疯蜜罐 wait: 15m; singleRider: False; FP: {'available': False};
+2019-02-02 14:44:10,441 INFO [__main__] - 奇幻童话城堡里的迪士尼公主们 wait: 150m; singleRider: False; FP: {'available': False};
+2019-02-02 14:44:10,442 INFO [__main__] - 小飞侠天空奇遇 wait: 60m; singleRider: False; FP: {'startTime': 'FASTPASS is Not Available', 'available': True};
+2019-02-02 14:44:10,444 INFO [__main__] - 七个小矮人矿山车 wait: 105m; singleRider: True; FP: {'startTime': 'FASTPASS is Not Available', 'available': True};
+2019-02-02 14:44:10,445 INFO [__main__] - 小熊维尼历险记 wait: 50m; singleRider: False; FP: {'startTime': 'FASTPASS is Not Available', 'available': True};
+2019-02-02 14:44:10,450 INFO [__main__] - 晶彩奇航 wait: 30m; singleRider: False; FP: {'available': False};
+2019-02-02 14:44:10,453 INFO [__main__] - 小飞象 wait: 40m; singleRider: False; FP: {'available': False};
+2019-02-02 14:44:10,454 INFO [__main__] - 幻想曲旋转木马 wait: 30m; singleRider: False; FP: {'available': False};
+2019-02-02 14:44:10,457 INFO [__main__] - 奇想花园的米奇俱乐部 wait: 20m; singleRider: False; FP: {'available': False};
+2019-02-02 14:44:10,459 INFO [__main__] - 漫威英雄总部的美国队长/漫威英雄总部 wait: 20m; singleRider: False; FP: {'available': False};
+2019-02-02 14:44:10,461 INFO [__main__] - 创急速光轮 wait: 40m; singleRider: True; FP: {'startTime': 'FASTPASS is Not Available', 'available': True};
+2019-02-02 14:44:10,462 INFO [__main__] - 太空幸会史迪奇 wait: 15m; singleRider: False; FP: {'available': False};
+2019-02-02 14:44:10,463 INFO [__main__] - 喷气背包飞行器 wait: 50m; singleRider: False; FP: {'available': False};
+2019-02-02 14:44:10,465 INFO [__main__] - 巴斯光年星际营救 wait: 30m; singleRider: False; FP: {'startTime': 'FASTPASS is Not Available', 'available': True};
+2019-02-02 14:44:10,467 INFO [__main__] - 探秘海妖复仇号 wait: 5m; singleRider: False; FP: {'available': False};
+2019-02-02 14:44:10,470 INFO [__main__] - 传奇戏水滩 wait: 5m; singleRider: False; FP: {'available': False};
+2019-02-02 14:44:10,473 INFO [__main__] - 加勒比海盗——沉落宝藏之战 wait: 30m; singleRider: True; FP: {'available': False};
+2019-02-02 14:44:10,476 INFO [__main__] - 探险家独木舟 wait: 40m; singleRider: False; FP: {'available': False};
+2019-02-02 14:44:10,478 INFO [__main__] - 雷鸣山漂流 wait: 50m; singleRider: False; FP: {'startTime': 'FASTPASS is Not Available', 'available': True};
+2019-02-02 14:44:10,480 INFO [__main__] - 抱抱龙冲天赛车 wait: 75m; singleRider: False; FP: {'available': True};
+2019-02-02 14:44:10,482 INFO [__main__] - 弹簧狗团团转 wait: 50m; singleRider: False; FP: {'available': False};
+2019-02-02 14:44:10,485 INFO [__main__] - 胡迪牛仔嘉年华 wait: 30m; singleRider: False; FP: {'available': False};
+2019-02-02 14:44:10,486 INFO [__main__] - 米奇电影节 wait: -1m; singleRider: False; FP: {'available': False};
+2019-02-02 14:44:10,492 INFO [__main__] - 漫威英雄总部的蜘蛛侠/漫威英雄总部 wait: 20m; singleRider: False; FP: {'available': False};
+2019-02-02 14:44:10,493 INFO [__main__] - 变身钢铁侠/漫威英雄总部 wait: 10m; singleRider: False; FP: {'available': False};
+2019-02-02 14:44:10,503 DEBUG [urllib3.connectionpool] - Resetting dropped connection: localhost
+2019-02-02 14:44:10,512 DEBUG [urllib3.connectionpool] - http://localhost:8086 "POST /write?db=disney HTTP/1.1" 204 0
+2019-02-02 14:44:10,514 ERROR [__main__] - exception
+Traceback (most recent call last):
+  File "/home/benfen/PersonalProject/迪士尼旅行推荐/wait4disney-master/wait4disney-master/disney/fetch.py", line 52, in <module>
+    main()
+  File "/home/benfen/PersonalProject/迪士尼旅行推荐/wait4disney-master/wait4disney-master/disney/fetch.py", line 47, in main
+    time.sleep(300)
+NameError: name 'time' is not defined
+2019-02-02 14:44:21,956 DEBUG [urllib3.connectionpool] - Starting new HTTP connection (1): localhost:8086
+2019-02-02 14:44:21,963 DEBUG [urllib3.connectionpool] - http://localhost:8086 "POST /query?q=CREATE+DATABASE+%22disney%22&db=disney HTTP/1.1" 200 None
+2019-02-02 14:44:21,980 DEBUG [urllib3.connectionpool] - Starting new HTTPS connection (1): authorization.shanghaidisneyresort.com:443
+2019-02-02 14:44:22,259 DEBUG [urllib3.connectionpool] - https://authorization.shanghaidisneyresort.com:443 "POST /curoauth/v1/token HTTP/1.1" 200 None
+2019-02-02 14:44:22,276 DEBUG [urllib3.connectionpool] - Starting new HTTPS connection (1): apim.shanghaidisneyresort.com:443
+2019-02-02 14:44:22,435 DEBUG [urllib3.connectionpool] - https://apim.shanghaidisneyresort.com:443 "GET /facility-service/theme-parks/desShanghaiDisneyland;entityType=theme-park;destination=shdr/wait-times?mobile=true&region=&region=CN HTTP/1.1" 200 15527
+2019-02-02 14:44:22,447 INFO [__main__] - 古迹探索营的绳索挑战道/古迹探索营 wait: 90m; singleRider: False; FP: {'available': False};
+2019-02-02 14:44:22,451 INFO [__main__] - 欢笑聚友会的丛林迪士尼朋友们 wait: 20m; singleRider: False; FP: {'available': False};
+2019-02-02 14:44:22,460 INFO [__main__] - 翱翔.飞跃地平线 wait: 135m; singleRider: False; FP: {'startTime': 'FASTPASS is Not Available', 'available': True};
+2019-02-02 14:44:22,461 INFO [__main__] - 漫游童话时光 wait: 20m; singleRider: False; FP: {'available': False};
+2019-02-02 14:44:22,462 INFO [__main__] - 爱丽丝梦游仙境迷宫 wait: 5m; singleRider: False; FP: {'available': False};
+2019-02-02 14:44:22,463 INFO [__main__] - 旋转疯蜜罐 wait: 15m; singleRider: False; FP: {'available': False};
+2019-02-02 14:44:22,472 INFO [__main__] - 奇幻童话城堡里的迪士尼公主们 wait: 150m; singleRider: False; FP: {'available': False};
+2019-02-02 14:44:22,473 INFO [__main__] - 小飞侠天空奇遇 wait: 60m; singleRider: False; FP: {'startTime': 'FASTPASS is Not Available', 'available': True};
+2019-02-02 14:44:22,475 INFO [__main__] - 七个小矮人矿山车 wait: 105m; singleRider: True; FP: {'startTime': 'FASTPASS is Not Available', 'available': True};
+2019-02-02 14:44:22,479 INFO [__main__] - 小熊维尼历险记 wait: 50m; singleRider: False; FP: {'startTime': 'FASTPASS is Not Available', 'available': True};
+2019-02-02 14:44:22,481 INFO [__main__] - 晶彩奇航 wait: 30m; singleRider: False; FP: {'available': False};
+2019-02-02 14:44:22,484 INFO [__main__] - 小飞象 wait: 40m; singleRider: False; FP: {'available': False};
+2019-02-02 14:44:22,486 INFO [__main__] - 幻想曲旋转木马 wait: 30m; singleRider: False; FP: {'available': False};
+2019-02-02 14:44:22,488 INFO [__main__] - 奇想花园的米奇俱乐部 wait: 20m; singleRider: False; FP: {'available': False};
+2019-02-02 14:44:22,490 INFO [__main__] - 漫威英雄总部的美国队长/漫威英雄总部 wait: 20m; singleRider: False; FP: {'available': False};
+2019-02-02 14:44:22,491 INFO [__main__] - 创急速光轮 wait: 40m; singleRider: True; FP: {'startTime': 'FASTPASS is Not Available', 'available': True};
+2019-02-02 14:44:22,493 INFO [__main__] - 太空幸会史迪奇 wait: 15m; singleRider: False; FP: {'available': False};
+2019-02-02 14:44:22,495 INFO [__main__] - 喷气背包飞行器 wait: 50m; singleRider: False; FP: {'available': False};
+2019-02-02 14:44:22,501 INFO [__main__] - 巴斯光年星际营救 wait: 30m; singleRider: False; FP: {'startTime': 'FASTPASS is Not Available', 'available': True};
+2019-02-02 14:44:22,505 INFO [__main__] - 探秘海妖复仇号 wait: 5m; singleRider: False; FP: {'available': False};
+2019-02-02 14:44:22,509 INFO [__main__] - 传奇戏水滩 wait: 5m; singleRider: False; FP: {'available': False};
+2019-02-02 14:44:22,510 INFO [__main__] - 加勒比海盗——沉落宝藏之战 wait: 30m; singleRider: True; FP: {'available': False};
+2019-02-02 14:44:22,512 INFO [__main__] - 探险家独木舟 wait: 40m; singleRider: False; FP: {'available': False};
+2019-02-02 14:44:22,514 INFO [__main__] - 雷鸣山漂流 wait: 50m; singleRider: False; FP: {'startTime': 'FASTPASS is Not Available', 'available': True};
+2019-02-02 14:44:22,517 INFO [__main__] - 抱抱龙冲天赛车 wait: 75m; singleRider: False; FP: {'available': True};
+2019-02-02 14:44:22,518 INFO [__main__] - 弹簧狗团团转 wait: 50m; singleRider: False; FP: {'available': False};
+2019-02-02 14:44:22,522 INFO [__main__] - 胡迪牛仔嘉年华 wait: 30m; singleRider: False; FP: {'available': False};
+2019-02-02 14:44:22,523 INFO [__main__] - 米奇电影节 wait: -1m; singleRider: False; FP: {'available': False};
+2019-02-02 14:44:22,525 INFO [__main__] - 漫威英雄总部的蜘蛛侠/漫威英雄总部 wait: 20m; singleRider: False; FP: {'available': False};
+2019-02-02 14:44:22,526 INFO [__main__] - 变身钢铁侠/漫威英雄总部 wait: 10m; singleRider: False; FP: {'available': False};
+2019-02-02 14:44:22,538 DEBUG [urllib3.connectionpool] - Resetting dropped connection: localhost
+2019-02-02 14:44:22,546 DEBUG [urllib3.connectionpool] - http://localhost:8086 "POST /write?db=disney HTTP/1.1" 204 0
