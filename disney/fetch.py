@@ -6,7 +6,9 @@ import config
 
 import influxdb
 
-log = logging.getLogger(__name__)
+log_format = "%(asctime)s %(levelname)s [%(name)s] - %(message)s"
+logging.basicConfig(format=log_format,filename='disney.log',level=logging.DEBUG)
+logging.info('So should this')
 
 # 
 def make_datas():
@@ -24,7 +26,7 @@ def make_datas():
                 },
             }
             datapoints.append(datapoint)
-            log.info("%s wait: %sm;" % (a.zhName, a.wait_minutes)+" singleRider: {}; FP: {};".format(a.single_rider,a.fastPass))
+            logging.info("%s wait: %sm;" % (a.zhName, a.wait_minutes)+" singleRider: {}; FP: {};".format(a.single_rider,a.fastPass))
 
     return datapoints
 
@@ -43,6 +45,11 @@ def main():
         datapoints = make_datas()
         #print(datapoints)
         assert db.write_points(datapoints, database='disney', batch_size=50)
+        query = 'select value from wait_minutes where \"name\"=\'TronLightcyclePowerRun\';'
+        result = db.query(query)
+
+        print("Result: {0}".format(result))
+
         time.sleep(300)
 
 
@@ -50,4 +57,4 @@ if __name__ == '__main__':
     try:
         main()
     except Exception as ex:
-        log.exception("exception")
+        logging.exception("exception")
