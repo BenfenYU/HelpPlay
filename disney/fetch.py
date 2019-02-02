@@ -1,8 +1,8 @@
 import logging,time
 
-from disney.client import api
-from disney.client import names
-from disney import config
+from client import api
+from client import names
+import config
 
 import influxdb
 
@@ -14,7 +14,6 @@ def make_datas():
     for a in api.attractions():
         
         if a.zhName and a.wait_minutes:
-            print(a.wait_minutes)
             datapoint = {
                 "measurement": "wait_minutes",
                 "tags": {

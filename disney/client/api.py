@@ -1,5 +1,5 @@
 import requests,time
-from disney.client import names
+from . import names
 
 
 class Attraction(object):
