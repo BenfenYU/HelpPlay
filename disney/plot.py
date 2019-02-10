@@ -1,7 +1,6 @@
 import time
 import matplotlib.pyplot as plt
 
-
 def transTime(data):
     localTime = time.localtime(int(data[0])/TIMETRANS)
     data2 = int(data[2])
@@ -31,7 +30,8 @@ with open(fileName,"r") as f:
                 data2 = transTime(data)
                 y4.append(data2)
 
-plt.figure(1) 
+plt.figure('image') 
+plt.suptitle('是是是The wait_time of four places ,one record per five minutes') # 图片名称
 
 # 2行2列的图
 plt.subplot(2, 2, 1) 
