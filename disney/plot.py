@@ -8,7 +8,7 @@ def transTime(data):
     
     return wait_time,localTime
 
-fileName = "../disneyData"
+fileName = "./disneyData"
 y1,y2,y3,y4 = [],[],[],[]
 # Unix 时间戳根据精度的不同，有 10 位（秒级），
 # 13 位（毫秒级），16 位（微妙级）和 19 位（纳秒级）
@@ -33,12 +33,13 @@ with open(fileName,"r") as f:
                     inOneDay = []
                 else:
                     stime = str(localTime.tm_hour)+':'+str(localTime.tm_min) 
-                    inOneDay.append(wait_time)
+                    inOneDay.append(waitTimes(stime=stime,wait_time=wait_time))
 
-print(len(allDays))
 for thing in allDays:
     x1 = [_ for _ in range(len(thing))]
-    y1 = thing
+    y1 = [w.wait_time for w in thing]
+    x1[0],x1[-1] = thing[0].stime,thing[-1].stime
+
 
     plt.figure()
     plt.plot(x1, y1) 

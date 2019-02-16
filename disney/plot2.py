@@ -7,12 +7,13 @@ def transTime(data):
     
     return data2
 
-fileName = "../disneyData"
+fileName = "./disneyData"
 y1,y2,y3,y4 = [],[],[],[]
 # Unix 时间戳根据精度的不同，有 10 位（秒级），
 # 13 位（毫秒级），16 位（微妙级）和 19 位（纳秒级）
 # 用于转换成python能用的时间戳
 TIMETRANS = 10**9
+
 with open(fileName,"r") as f:
     for line in f:
         data=line.split()
