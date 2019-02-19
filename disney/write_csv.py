@@ -1,7 +1,8 @@
 import time
 
 dataName = "./data/disneyData"
-csvName = "./data/BuzzLightyearPlanetRescue.txt"
+viewName = "BuzzLightyearPlanetRescue"
+csvName = './data/'+viewName+'.txt'
 TIMETRANS = 10**9
 
 
@@ -19,8 +20,11 @@ def readTime():
         for line in f:
             data=line.split()
             if data :
-                if data[1]=='BuzzLightyearPlanetRescue':
+                if data[1]==viewName:
                     wait_time,localTime = transTime(data)
+                    hour = localTime.tm_hour
+                    if not 8< hour <20:
+                        continue
                     if wait_time==-1:
                         continue
                     yield (wait_time,natureNum)

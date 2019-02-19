@@ -591,7 +591,7 @@ node {
         dtype: DT_STRING
         tensor_shape {
         }
-        string_val: "../data/BuzzLightyearPlanetRescue.txt"
+        string_val: "./data/BuzzLightyearPlanetRescue.txt"
       }
     }
   }
@@ -27957,7 +27957,7 @@ node {
         dtype: DT_STRING
         tensor_shape {
         }
-        string_val: "_temp_5e12aa186ed44c6980172fbbd604a0ee/part"
+        string_val: "_temp_f1b4a3b130a143d89cd2056c96b1b6b3/part"
       }
     }
   }
