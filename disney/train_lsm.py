@@ -42,13 +42,6 @@ class _LSTMModel(ts_model.SequentialTimeSeriesModel):
     self._predict_from_lstm_output = None
 
   def initialize_graph(self, input_statistics):
-    """Save templates for components, which can then be used repeatedly.
-    This method is called every time a new graph is created. It's safe to start
-    adding ops to the current default graph here, but the graph should be
-    constructed from scratch.
-    Args:
-      input_statistics: A math_utils.InputStatistics object.
-    """
     super(_LSTMModel, self).initialize_graph(input_statistics=input_statistics)
     self._lstm_cell = tf.nn.rnn_cell.LSTMCell(num_units=self._num_units)
     # Create templates so we don't have to worry about variable reuse.

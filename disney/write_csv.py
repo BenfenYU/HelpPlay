@@ -16,6 +16,8 @@ def transTime(data):
 
 def readTime():
     natureNum = 1
+    before = 0
+    beforeTwo = 0
     with open(dataName,"r") as f:
         for line in f:
             data=line.split()
@@ -23,11 +25,18 @@ def readTime():
                 if data[1]==viewName:
                     wait_time,localTime = transTime(data)
                     hour = localTime.tm_hour
-                    if not 8< hour <20:
+                    minute = localTime.tm_min
+                    day = localTime.tm_mday
+                    if day ==2 :
                         continue
-                    if wait_time==-1:
+                    if not 8 <= hour <20 :
+                        natureNum = 1 
                         continue
-                    yield (wait_time,natureNum)
+                    #if wait_time==-1:
+                    #    continue
+                    yield (natureNum,beforeTwo,before,wait_time)
+                    beforeTwo = before
+                    before = wait_time
                     natureNum = natureNum+1
 
 def writeToCsv():
@@ -35,9 +44,12 @@ def writeToCsv():
     with open(csvName,"w") as f:
         while True:
             try:
-                num = next(series)[1]
-                wait_time = next(series)[0]
-                f.write(str(num)+','+str(wait_time)+'\n')
+                every = next(series)
+                num = every[0]
+                beforeTwo = every[1]
+                before = every[2]
+                wait_time =every[3]
+                f.write(str(num)+','+str(beforeTwo)+','+str(before)+','+str(wait_time)+'\n')
             except StopIteration :
                 return
 
