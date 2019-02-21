@@ -13,7 +13,7 @@ rnn_unit = 10  # 隐层数量
 input_size = 3
 output_size = 1
 lr = 0.0006  # 学习率
-epochs = 1000
+epochs = 500
 originalData = []
 
 # 输入层、输出层权重、偏置
