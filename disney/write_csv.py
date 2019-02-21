@@ -1,8 +1,8 @@
 import time
 
-dataName = "./data/disneyData"
+dataName = "./data/test_disneyData"
 viewName = "BuzzLightyearPlanetRescue"
-csvName = './data/'+viewName+'.txt'
+csvName = './data/test_'+viewName+'.txt'
 TIMETRANS = 10**9
 
 

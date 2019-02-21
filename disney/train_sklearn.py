@@ -11,7 +11,7 @@ from sklearn.externals import joblib
 import matplotlib.pyplot as plt
 import numpy as np
 
-fileName = './data/BuzzLightyearPlanetRescue.txt'
+fileName = './data/train_BuzzLightyearPlanetRescue.txt'
 
 X ,y = [],[]
 with open(fileName,'r') as fp:
@@ -46,13 +46,11 @@ print('clf精度为{}，regression精度为{}'.format(clfAccurace,regAccurace))
 joblib.dump(reg, './models/MLPReg_BuzzLightyearPlanetRescue.joblib') 
 
 
-'''
-y_pre = clf.predict(X_test)
+y_pre = reg.predict(X_test)
 plt.figure('image') 
 plt.title('BuzzLightyearPlanetRescue')
-plt.plot(X_test[:,0] ,y_test,  color='red', label='original')
-plt.plot(X_test[:,0], y_pre, color='green', label='predict')
+plt.plot(list(range(len(y_test))) ,y_test,  color='red', label='original')
+plt.plot(list(range(len(y_pre))), y_pre, color='green', label='predict')
 plt.legend()
 
 plt.show()
-'''
