@@ -11,19 +11,21 @@
             "program": "${file}",
             "console": "integratedTerminal"
         },
+       {
+    "name": "Python Attach (Remote Debug 49.52.29.87)",
+    "type": "python",
+    "request": "attach",
+    "pathMappings": [
         {
-            "name": "Python: Remote Attach",
-            "type": "python",
-            "request": "attach",
-            "port": 5678,
-            "host": "localhost",
-            "pathMappings": [
-                {
-                    "localRoot": "${workspaceFolder}",
-                    "remoteRoot": "."
-                }
-            ]
-        },
+            "localRoot": "${workspaceFolder}",  
+            // You may also manually specify the directory containing your source code.
+            "remoteRoot": "/home/benfen/PersonalProject/HELPPLAY/" 
+            // Linux example; adjust as necessary for your OS and situation.
+        }
+    ],
+    "port": 5678,                   // Set to the remote port.
+    "host": "49.52.29.87"               // Set to your remote host's public IP address.
+}, 
         {
             "name": "Python: Module",
             "type": "python",
