@@ -1,18 +1,17 @@
-import logging,time
+import logging,time,influxdb
+from get_disney_date import names,config,api
 
-from client import api
-from client import names
-import config
-
-import influxdb
-
-log_format = "%(asctime)s %(levelname)s [%(name)s] - %(message)s"
-logging.basicConfig(format=log_format,filename='disney.log',level=logging.DEBUG)
-logging.info('So should this')
+#log_format = "%(asctime)s %(levelname)s [%(name)s] - %(message)s"
+#logging.basicConfig(format=log_format,filename='disney.log',level=logging.DEBUG)
+#logging.info('So should this')
 
 # 
+
+view_waitTime = {}
+
 def make_datas():
     datapoints = []
+    global view_waitTime
     for a in api.attractions():
         
         if a.zhName and a.wait_minutes:
@@ -26,7 +25,10 @@ def make_datas():
                 },
             }
             datapoints.append(datapoint)
-            logging.info("%s wait: %sm;" % (a.zhName, a.wait_minutes)+" singleRider: {}; FP: {};".format(a.single_rider,a.fastPass))
+
+            view_waitTime[a.name] = float(a.wait_minutes)
+            #logging.info("%s wait: %sm;" % (a.zhName, a.wait_minutes)\
+            #    +" singleRider: {}; FP: {};".format(a.single_rider,a.fastPass))
 
     return datapoints
 
@@ -39,22 +41,15 @@ def get_influxdb():
     return db
 
 
-def main():
+def main(lock):
     db = get_influxdb()
     while True:
+        lock.acquire()
         datapoints = make_datas()
-        #print(datapoints)
         assert db.write_points(datapoints, database='disney', batch_size=50)
-        query = 'select value from wait_minutes where \"name\"=\'TronLightcyclePowerRun\';'
-        result = db.query(query)
+        lock.release()
+        print('Getting wait time of views.')
 
-        print("Result: {0}".format(result))
-
-        time.sleep(300)
+        time.sleep(180)
 
 
-if __name__ == '__main__':
-    try:
-        main()
-    except Exception as ex:
-        logging.exception("exception")

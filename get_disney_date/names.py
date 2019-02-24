@@ -35,12 +35,6 @@ NAMES = {
 	'MeetMickeyGardensImagination': u'奇想花园的米奇俱乐部',
 	'CaptainAmerica': u'漫威英雄总部的美国队长/漫威英雄总部',
 	'JungleFriendsHappyCircle': u'欢笑聚友会的丛林迪士尼朋友们',
-	'1966': u'1966 is Closed',
-	'1967': u'1967',
-	'1984': u'1984',
-	'2281': u'2281 is See Times Guide',
-	'2293': u'2293',
-	'2476': u'2476 is Closed',
 	'CampDiscovery': u'CampDiscovery',
 	'MickeysFilmFestival': u'米奇电影节',
 	'TronRealm': u'TronRealm maybe 米妮和朋友们',
@@ -55,7 +49,7 @@ NAMES = {
 	'MillenniumFalcon': u'千年隼号/星球大战远征基地/银河帝国贸易站',
     'RexsRCRacer': u'抱抱龙冲天赛车',
     'SlinkyDogSpin': u'弹簧狗团团转',
-    'WoodysRoundUp': u'胡迪牛仔嘉年华'
+    'WoodysRoundUp': u'胡迪牛仔嘉年华',
 }
 
 
