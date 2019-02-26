@@ -10,10 +10,17 @@ app = Flask(__name__)
 
 functionDict={'play_next_one':play_next_one}
 
-@app.route('/<doWhat>&<args>')
+@app.route('/')
 def hello():
+    return 'hello world'
+
+@app.route('/<doWhat>&<args>')
+def cal():
     functionDict[doWhat](args)
     
-
+    return doWhat+args
+    
+if __name__ == '__main__':
+    app.run()
 
 
