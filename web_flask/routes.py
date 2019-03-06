@@ -5,6 +5,7 @@
 
 from flask import Flask
 from how_to_play import *
+from calculate import calculate_time
 
 app = Flask(__name__)
 
@@ -13,6 +14,11 @@ functionDict={'play_next_one':play_next_one}
 @app.route('/')
 def hello():
     return 'hello world'
+
+@app.route('/next_view?from=<fromPosi>')
+def next_view():
+    from_position = tuple(fromPosi.split(','))
+    
 
 @app.route('/<doWhat>&<args>')
 def cal():

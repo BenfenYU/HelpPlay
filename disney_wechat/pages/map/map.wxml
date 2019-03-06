@@ -17,7 +17,7 @@
   loading="{{loading}}"
   plain="{{plain}}"
   disabled="{{disabled}}"
-  bindtap="primary"
+  bindtap="walk"
 >
   规划下个景点
 </button>

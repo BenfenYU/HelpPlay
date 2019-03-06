@@ -15,5 +15,26 @@ const formatNumber = n => {
 }
 
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  exitPro: exitPro
+}
+
+function exitPro(title,content){
+  wx.showModal({
+    title: title,
+    content: content,
+    success: function (res) {
+      if (res.confirm) {
+        console.log('用户点击确定')
+        wx.navigateBack({
+          delta: 0
+        })
+      } else if (res.cancel) {
+        console.log('用户点击取消')
+        wx.navigateBack({
+          delta: 0
+        })
+      }
+    }
+  })
 }

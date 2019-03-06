@@ -61,7 +61,7 @@ Page({
         const longitude = res.longitude
         const speed = res.speed
         const accuracy = res.accuracy
-        app.globalData.location = latitude+','+longitude 
+        app.globalData.location = {'latitude':latitude,'longtitude':longitude} 
         console.log(app.globalData.location)
         _this.setData({
           hasLocation: true
