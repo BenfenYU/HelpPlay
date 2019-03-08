@@ -5,7 +5,7 @@
 
 from flask import Flask
 from how_to_play import *
-from calculate import calculate_time
+#from calculate import calculate_time
 
 app = Flask(__name__)
 
@@ -13,7 +13,7 @@ functionDict={'play_next_one':play_next_one}
 
 @app.route('/')
 def hello():
-    return 'hello world'
+    return 'hello 小徐，我的小儿子'
 
 @app.route('/next_view?from=<fromPosi>')
 def next_view():
@@ -27,6 +27,6 @@ def cal():
     return doWhat+args
     
 if __name__ == '__main__':
-    app.run(host='0.0.0.0',port = 5000)
+    app.run()
 
 
