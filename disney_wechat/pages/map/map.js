@@ -13,6 +13,14 @@ Page({
    * 页面的初始数据
    */
   data: {
+    markers: [{
+      iconPath: '/resources/others.png',
+      id: 0,
+      latitude: 31.154939,
+      longitude: 121.648865,
+      width: 50,
+      height: 50
+    }],
 
   },
 
@@ -22,6 +30,11 @@ Page({
   onLoad: function (options) {
     //如果没有位置信息，则提示用户并退出
     var location = app.globalData.location
+
+    this.setData({
+      views: [31.154939, 121.648865]
+    })
+    console.log(this.data['views'])
     /*
     if ((location['latitude']<minLati || location['latitude'>maxLati])
     || (location['longtitude']<minLongti || location['longtitude']>maxLongti)){
@@ -33,8 +46,11 @@ Page({
   next_view: function (e){
 
     wx.request({
-      url: '127.0.0.1:5000/doWhat&31.143657,121.660764',
+      url: 'https://geonbgroup.top', //'127.0.0.1:5000/doWhat&31.143657,121.660764',
       success(res) {
+        console.log(res.data)
+      },
+      fail(res){
         console.log(res.data)
       }
     })

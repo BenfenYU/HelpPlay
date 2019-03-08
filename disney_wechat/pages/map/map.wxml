@@ -1,13 +1,14 @@
-<!--绑定点击事件-->
-<button bindtap="driving">路线规划</button>
+
 <!--地图容器-->
  <map
    id="myMap"
-   style="width: 100%; height: 420px;"
+   style="width: 100%; height: 450px;"
    longitude="121.660764" latitude="31.143657"
    scale='15'
    polyline="{{polyline}}"
    bindtap='mark'
+   show-location=True
+   markers='{{markers}}'
  >
   <cover-view class="controls">
     <cover-view class="play" bindtap="next_view">
@@ -20,19 +21,6 @@
   bindtap="walk"
 >
   规划下个景点
-</button>
-    </cover-view>
-    <cover-view class="pause" bindtap="pause">
-      <button
-  type="default"
-  size="{{defaultSize}}"
-  loading="{{loading}}"
-  plain="{{plain}}"
-  disabled="{{disabled}}"
-  bindtap="default"
-  hover-class="other-button-hover"
->
-  default
 </button>
     </cover-view>
   </cover-view>

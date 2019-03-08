@@ -1,1 +1,12 @@
 /* pages/map/map.wxss */
+
+map #myMap{
+  z-index: -1
+}
+
+.play{
+  
+position:absolute;
+left:130rpx;
+top:800rpx
+}
