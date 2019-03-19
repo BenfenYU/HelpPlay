@@ -7,17 +7,22 @@ from flask import Flask
 from how_to_play import *
 #from calculate import calculate_time
 
+plans = {'1':one_next}
+
 app = Flask(__name__)
 
-functionDict={'play_next_one':play_next_one}
+functionDict={'play_next_one':one_next}
 
 @app.route('/')
 def hello():
     return 'hello 小徐，我的小儿子'
 
-@app.route('/next_view?from=<fromPosi>')
-def next_view():
-    from_position = tuple(fromPosi.split(','))
+@app.route('/?plan=<plan>&origin=<origin>')
+def plan_later():
+    orig_location = tuple(origin)
+    polyLines = str(plans[plan](location))
+
+    return polyLines
     
 
 @app.route('/<doWhat>&<args>')

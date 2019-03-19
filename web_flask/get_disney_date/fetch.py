@@ -1,4 +1,4 @@
-import logging,time,influxdb
+import logging,time
 from get_disney_date import names,config,api
 
 #log_format = "%(asctime)s %(levelname)s [%(name)s] - %(message)s"
@@ -9,7 +9,7 @@ from get_disney_date import names,config,api
 
 view_waitTime = {}
 
-def make_datas():
+def make_datas(return_now = False):
     datapoints = []
     global view_waitTime
     for a in api.attractions():
@@ -26,9 +26,12 @@ def make_datas():
             }
             datapoints.append(datapoint)
 
-            view_waitTime[a.name] = float(a.wait_minutes)
+            view_waitTime[a.zhName] = float(a.wait_minutes)
             #logging.info("%s wait: %sm;" % (a.zhName, a.wait_minutes)\
             #    +" singleRider: {}; FP: {};".format(a.single_rider,a.fastPass))
+    
+    if return_now:
+        return view_waitTime
 
     return datapoints
 
@@ -42,6 +45,7 @@ def get_influxdb():
 
 
 def main(lock):
+    import influxdb
     db = get_influxdb()
     while True:
         lock.acquire()
@@ -51,5 +55,10 @@ def main(lock):
         print('Getting wait time of views.')
 
         time.sleep(180)
+
+def get_now_data():
+    view_waitTime = make_datas(return_now=True)
+
+    return view_waitTime
 
 

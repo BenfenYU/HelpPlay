@@ -1,27 +1,22 @@
+<!--pages/map.wxml-->
 
-<!--地图容器-->
- <map
-   id="myMap"
-   style="width: 100%; height: 450px;"
-   longitude="121.660764" latitude="31.143657"
-   scale='15'
-   polyline="{{polyline}}"
-   bindtap='mark'
-   show-location=True
-   markers='{{markers}}'
- >
-  <cover-view class="controls">
-    <cover-view class="play" bindtap="next_view">
-      <button
-  type="primary"
-  size="{{primarySize}}"
-  loading="{{loading}}"
-  plain="{{plain}}"
-  disabled="{{disabled}}"
-  bindtap="walk"
->
-  规划下个景点
-</button>
-    </cover-view>
-  </cover-view>
- </map>
+<view class="swiper-tab">
+    <view class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">依次规划</view>
+    <view class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">一次性规划</view>
+</view>
+
+<view class='view'>
+
+  <map longitude="121.660764" latitude="31.143657" markers="{{markers}}" covers="{{covers}}" show-location>
+
+  </map>
+</view>
+
+<cover-view class="btn-area1">
+<button hover="true" bindtap="next_route" hover-class="btnhover1"> 规划下一路线</button>
+</cover-view>
+
+
+<cover-view class="btn-area2">
+<button hover="true" bindtap="fp" hover-class="btnhover1" > 添加FP卡 </button>
+</cover-view>
