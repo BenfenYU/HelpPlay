@@ -6,11 +6,13 @@ WALK_SPEED = 1
 KEY = '&key=H6ZBZ-IIEHJ-FGAFO-KCJ67-MPPJT-W3BZG'
 
 def one_next(location):
+    print('...开始计算下一个去哪里玩。。。')
     des_list = []
     [des_list.append((value['lat'],value['lng'],key)) for key,value in COORS.items()]
     # dis_list = sorted(cal_time(location,des_list).items(),key = lambda item:item[1])
     dis_list = cal_time(location,des_list)
 
+    print('...获取当前游乐园排队时间。。。')
     view_waitTime = fetch.get_now_data()
 
     for key ,value in view_waitTime.items():
@@ -67,7 +69,7 @@ def get_way(orig,dest_dict):
     '''
 
 
-one_next(( 31.200631,121.666853))
+#one_next(( 31.200631,121.666853))
 
 
 

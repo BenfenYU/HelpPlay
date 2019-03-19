@@ -15,12 +15,12 @@ functionDict={'play_next_one':one_next}
 
 @app.route('/')
 def hello():
-    return 'hello 小徐，我的小儿子'
+    return 'hello 小徐，我的小儿'
 
-@app.route('/?plan=<plan>&origin=<origin>')
-def plan_later():
-    orig_location = tuple(origin)
-    polyLines = str(plans[plan](location))
+@app.route('/plan/plan=<plan>&origin=<lat>,<lng>')
+def plan_later(plan,lat,lng):
+    orig_location = (float(lat),float(lng))
+    polyLines = str(plans[plan](orig_location))
 
     return polyLines
     
