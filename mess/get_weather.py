@@ -1,33 +1,40 @@
 
-import requests,time
+import requests,time,json
 
 def fetchWeather():
-    result = requests.get(API, params={
-        'key': KEY,
-        'location': location,
-        'unit': UNIT
-    }, timeout=1)
-    return result.text
+    response = requests.get(url)
+    result = json.loads(response.text)['results'][0]['suggestion']
+    travel = result['travel']['brief']
+    sport = result['sport']['brief']
+    uv = result['uv']['brief']
+    #mood = result['mood']['brief']
+    flu = result['flu']['brief']
+    #allergy = result['allergy']['brief']
+    all_oponent = travel+','+sport+','+uv+','+flu+'\n'
+    
+    return all_oponent
 
 
 if __name__ == '__main__':
 
     times = [8,9,10,11,12,13,14,15,16,17,18,19,20,21,22]
-    location = '上海'
+    location = 'shanghai'
     KEY = 'rn4ii14v53cd92ql'
     UNIT = 'c'
-    API = 'https://api.seniverse.com/v3/weather/now.json'
-    fileName = '../save_weather.txt'
+    url = 'https://api.seniverse.com/v3/life/suggestion.json?key='+KEY+'&location=shanghai&language=zh-Hans'
+    fileName = '../save_exponent.txt'
 
-    while True:
-        hour = time.localtime().tm_hour
-        if hour in times:    
-            result = fetchWeather()
-            with open(fileName,'a') as fp:
-                fp.write('\n'+str(time.time())+','+result)
+    
+    with open(fileName,'a') as fp:
+        fp.write('timestamp,travel,sport,uv,flu\n')
+        while True:
+            hour = time.localtime().tm_hour
+            if hour in times:    
+                result = fetchWeather()
+                fp.write(str(time.time())+','+result)
 
-            print(result)
-            time.sleep(3600)
+                print(result)
+                time.sleep(3600)
 
 
 '''import requests,json
