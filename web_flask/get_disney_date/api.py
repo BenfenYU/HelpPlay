@@ -1,5 +1,5 @@
 import requests,time
-from get_disney_date import names
+import names
 
 class Attraction(object):
 
@@ -105,6 +105,7 @@ def get_wait_time_list():
         try:
             token = get_token()
             response = get_wait_time(token)
+            #print(response)
         except (requests.HTTPError, requests.ConnectionError):
             time.sleep(1)
         else:
@@ -119,4 +120,14 @@ def attractions():
         items.append(Attraction(entity_json))
 
     return items
+
+def save_to_json():
+    raw_json = get_wait_time_list()
+    entry_json = raw_json['entries']
+    save_json = {'entries':entry_json}
+
+    with open('wait_time.data','a') as f:
+        f.write(str(save_json)+'\n')
+
+    print(type(save_json))
 

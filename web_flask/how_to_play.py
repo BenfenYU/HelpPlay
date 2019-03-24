@@ -54,7 +54,7 @@ def get_way(orig,dest_dict):
 
     url = base_url+ori_posi+des_posi+KEY
     response = requests.get(url)
-    result_lines = {'polylines':json.loads(response.text)['result']['routes'][0]['polyline']}
+    result_lines = {"polylines":json.loads(response.text)['result']['routes'][0]['polyline']}
     print(result_lines)
 
     return result_lines

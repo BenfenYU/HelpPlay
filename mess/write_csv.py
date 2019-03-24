@@ -1,8 +1,9 @@
 import time
 
-dataName = "./data/test_disneyData"
+baseName = './HelpPlay/data/'
+dataName = baseName+"disneyData"
 viewName = "BuzzLightyearPlanetRescue"
-csvName = './data/test_'+viewName+'.txt'
+csvName = baseName+viewName+'.csv'
 TIMETRANS = 10**9
 
 
@@ -17,7 +18,6 @@ def transTime(data):
 def readTime():
     natureNum = 1
     before = 0
-    beforeTwo = 0
     with open(dataName,"r") as f:
         for line in f:
             data=line.split()
@@ -27,30 +27,36 @@ def readTime():
                     hour = localTime.tm_hour
                     minute = localTime.tm_min
                     day = localTime.tm_mday
-                    if day ==2 :
-                        continue
+                    week_day = localTime.tm_wday
+                    holiday = 1
                     if not 8 <= hour <20 :
                         natureNum = 1 
                         continue
-                    #if wait_time==-1:
+                    if week_day == 5 or week_day == 6:
+                        holiday = 2
+                    #if day ==2 :
                     #    continue
-                    yield (natureNum,beforeTwo,before,wait_time)
-                    beforeTwo = before
+                    if wait_time==-1:
+                        continue
+                    yield (natureNum,holiday,wait_time)
                     before = wait_time
                     natureNum = natureNum+1
 
 def writeToCsv():
     series = readTime()
-    with open(csvName,"w") as f:
+    with open(csvName,"w") as fp:
         while True:
             try:
                 every = next(series)
+                #print(every)
                 num = every[0]
-                beforeTwo = every[1]
-                before = every[2]
-                wait_time =every[3]
-                f.write(str(num)+','+str(beforeTwo)+','+str(before)+','+str(wait_time)+'\n')
+                #before = every[1]
+                holiday = every[1]
+                wait_time = every[2]
+                fp.write(str(num)+','+str(holiday)+','+str(wait_time)+'\n')
             except StopIteration :
                 return
 
-writeToCsv()
+
+if __name__ == "__main__":
+    writeToCsv()

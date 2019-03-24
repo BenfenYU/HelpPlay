@@ -1,20 +1,21 @@
-#import ptvsd 
-#
-#ptvsd.enable_attach(address =('0.0.0.0',5678))
-#ptvsd.wait_for_attach()
+
 
 import numpy as np
 import matplotlib.pyplot as plt
 import os,math
 import tensorflow as tf
 
-csv_file_name = './data/BuzzLightyearPlanetRescue.txt'
+csv_file_name = './HelpPlay/data/BuzzLightyearPlanetRescue.csv'
 rnn_unit = 10  # 隐层数量
-input_size = 3
+input_size =2 
 output_size = 1
+time_step = 1
 lr = 0.0006  # 学习率
 epochs = 500
 originalData = []
+
+sample_mean = np.array([70.76278837,  1.29588766, 34.13239719]) 
+sample_std = np.array([41.18567931 ,0.45644075 ,17.66665945])
 
 # 输入层、输出层权重、偏置
 weights = {
@@ -29,33 +30,36 @@ biases = {
     'out': tf.Variable(tf.constant(0.1, shape=[1, ]))
     }
 
-with open(csv_file_name,'r') as fp:
-    for line in fp:
-        data = line.split(',')
-        natureNum = int(data[0])
-        beforeTwo = int(data[1])
-        before = int(data[2])
-        wait_time = int(data[3])
+def read_csv():
+    with open(csv_file_name,'r') as fp:
+        for line in fp:
+            data = line.split(',')
+            natureNum = int(data[0])
+            before = int(data[1])
+            holiday = int(data[2])
 
-        originalData.append([natureNum,beforeTwo,before,wait_time])
+            originalData.append([natureNum,before,holiday])
 
-length = len(originalData)
-dataToTest =originalData[math.floor(0.75*length):]
-dataToTrain = originalData[:math.floor(0.75*length)]
+    length = len(originalData)
+    dataToTest =originalData[math.floor(0.75*length):]
+    dataToTrain = originalData[:math.floor(0.75*length)]
+
+    return dataToTrain,dataToTest
 
 # 获取训练集
-def get_train_data(batch_size=60, time_step=20,train_begin=0, train_end=len(dataToTrain)):
+def get_train_data(train_end,batch_size=1, time_step=1,train_begin=0 ):
     batch_index = []
     data_train = dataToTrain[train_begin:train_end]
     data_train = np.array(data_train).astype(np.float)
     normalized_train_data = (
         data_train-np.mean(data_train, axis=0))/np.std(data_train, axis=0)  # 标准化
+    #print(np.mean(data_train, axis=0),np.std(data_train, axis=0))
     train_x, train_y = [], []  # 训练集
     for i in range(len(normalized_train_data)-time_step):
         if i % batch_size == 0:
             batch_index.append(i)
-        x = normalized_train_data[i:i+time_step, :3]
-        y = normalized_train_data[i:i+time_step, 3, np.newaxis]
+        x = normalized_train_data[i:i+time_step, :-1]
+        y = normalized_train_data[i:i+time_step, -1, np.newaxis]
         train_x.append(x.tolist())
         train_y.append(y.tolist())
     batch_index.append((len(normalized_train_data)-time_step))
@@ -64,8 +68,9 @@ def get_train_data(batch_size=60, time_step=20,train_begin=0, train_end=len(data
 
 def lstm(X):
     # tf.shape获取尺寸维度，返回一个tensor
-    batch_size = tf.shape(X)[0]
-    time_step = tf.shape(X)[1]
+    # 这里直接定义俩size，X只包含数据即可，不用携带其他信息
+    batch_size = 1#tf.shape(X)[0]
+    time_step = 1#tf.shape(X)[1]
     # 获取两个图变量
     w_in = weights['in']
     b_in = biases['in']
@@ -92,11 +97,12 @@ def lstm(X):
     
     return pred, final_states
 
-def train_lstm(batch_size=60, time_step=20,epochs=epochs, train_begin=0, train_end=len(dataToTrain)):
+def train_lstm( train_data,batch_size=1, time_step=1,epochs=epochs, train_begin=0):
+    train_end = len(train_data)
     # 这是个占位符张量，给多大的变量占位置
     X = tf.placeholder(tf.float32, shape=[None, time_step, input_size])
     Y = tf.placeholder(tf.float32, shape=[None, time_step, output_size])
-    batch_index, train_x, train_y = get_train_data(batch_size, time_step, train_begin, train_end)
+    batch_index, train_x, train_y = get_train_data(train_end,batch_size, time_step, train_begin)
     # 为这个上下文中的变量的命名，即name
     with tf.variable_scope("sec_lstm"):
         pred, _ = lstm(X)
@@ -112,33 +118,36 @@ def train_lstm(batch_size=60, time_step=20,epochs=epochs, train_begin=0, train_e
         sess.run(tf.global_variables_initializer())
         for i in range(epochs):  # 这个迭代次数，可以更改，越大预测效果会更好，但需要更长时间
             for step in range(len(batch_index)-1):
+                print(train_x[batch_index[
+                                    step]:batch_index[step+1]])
                 _, loss_ = sess.run([train_op, loss], feed_dict={X: train_x[batch_index[
                                     step]:batch_index[step+1]], Y: train_y[batch_index[step]:batch_index[step+1]]})
             if (i+1)%50==0 and batch_index != 0:
                 print("Number of epochs:", i+1, " loss:", loss_)
-                print("model_save: ", saver.save(sess, './models/lstm02_BuzzLightyearPlanetRescue.ckpt'))
+                print("model_save: ", saver.save(sess, './HelpPlay/models/tf_lstm/lstm02_BuzzLightyearPlanetRescue'))
         # 在Linux下面用 'model_save2/modle.ckpt'
         print("The train has finished")
 
-def prediction(time_step=20):
+def prediction(test_data,time_step=20):
     X=tf.placeholder(tf.float32, shape=[None,time_step,input_size])
-    mean,std,test_x,test_y=get_test_data(time_step,test_begin=0)
+    mean,std,test_x,test_y=get_test_data(test_data,time_step,test_begin=0)
     with tf.variable_scope("sec_lstm",reuse=tf.AUTO_REUSE):
         pred,_=lstm(X)
     #saver=tf.train.Saver(tf.global_variables())
-    saver = tf.train.import_meta_graph('./models/lstm02_BuzzLightyearPlanetRescue.meta')
+    # 读取图的信息
+    saver = tf.train.import_meta_graph('./HelpPlay/models/tf_lstm/lstm02_BuzzLightyearPlanetRescue.meta')
     with tf.Session() as sess:
         sess.run(tf.global_variables_initializer())
         #参数恢复
-        module_file = tf.train.latest_checkpoint('./models/')
+        module_file = tf.train.latest_checkpoint('./HelpPlay/models/tf_lstm/')
         saver.restore(sess, module_file)
         test_predict=[]
         for step in range(len(test_x)-1):
             prob=sess.run(pred,feed_dict={X:[test_x[step]]})
             predict=prob.reshape((-1))
             test_predict.extend(predict)
-        test_y=np.array(test_y)*std[3]+mean[3]
-        test_predict=np.array(test_predict)*std[3]+mean[3]
+        test_y=np.array(test_y)*std[-1]+mean[-1]
+        test_predict=np.array(test_predict)*std[-1]+mean[-1]
         acc=np.average(np.abs(test_predict-test_y[:len(test_predict)]))  #mean absolute error
         print("The MAE of this predict:",acc)
         #以折线图表示结果
@@ -173,7 +182,7 @@ def test_prediction(time_step=20):
         return test_predict
 
 # 获取测试集
-def test_get_test_data(time_step=20,data=dataToTest,test_begin=0):
+def test_get_test_data(data_test,time_step=1,test_begin=0):
     data_test = data[test_begin:]
     mean = np.mean(data_test, axis=0)
     std = np.std(data_test, axis=0)
@@ -186,7 +195,7 @@ def test_get_test_data(time_step=20,data=dataToTest,test_begin=0):
     test_x.append((normalized_test_data[(i+1)*time_step:, :4]).tolist())
     return test_x
 
-def get_test_data(time_step=20,data=dataToTest,test_begin=0):
+def get_test_data(data,time_step=1,test_begin=0):
     data_test = data[test_begin:]
     mean = np.mean(data_test, axis=0)
     std = np.std(data_test, axis=0)
@@ -194,14 +203,43 @@ def get_test_data(time_step=20,data=dataToTest,test_begin=0):
     size = (len(normalized_test_data)+time_step-1)//time_step  # 有size个sample
     test_x, test_y = [], []
     for i in range(size-1):
-        x = normalized_test_data[i*time_step:(i+1)*time_step, :3]
-        y = normalized_test_data[i*time_step:(i+1)*time_step, 3]
+        x = normalized_test_data[i*time_step:(i+1)*time_step, :-1]
+        y = normalized_test_data[i*time_step:(i+1)*time_step, -1]
         test_x.append(x.tolist())
         test_y.extend(y)
-    test_x.append((normalized_test_data[(i+1)*time_step:, :3]).tolist())
-    test_y.extend((normalized_test_data[(i+1)*time_step:, 3]).tolist())
+    test_x.append((normalized_test_data[(i+1)*time_step:, :-1]).tolist())
+    test_y.extend((normalized_test_data[(i+1)*time_step:, -1]).tolist())
     return mean, std, test_x, test_y
 
-#train_lstm()
-prediction()
-#test_prediction()
+def try_model(time_step = 1):
+    X = tf.placeholder(tf.float32, shape=[None, time_step, input_size])
+    #mean,std,test_x,test_y=get_test_data([[20,2,0]],time_step,test_begin=0)
+    normalized_data= (np.array([20,2,0])-sample_mean)/sample_std 
+    x = [[normalized_data[:-1].tolist()]]
+    y = [normalized_data[-1]]
+    #print(x,y)
+    with tf.variable_scope("sec_lstm",reuse=tf.AUTO_REUSE):
+        pred,_=lstm(X)
+    #saver=tf.train.Saver(tf.global_variables())
+    # 读取图的信息
+    saver = tf.train.import_meta_graph('./HelpPlay/models/tf_lstm/lstm02_BuzzLightyearPlanetRescue.meta')
+    with tf.Session() as sess:
+        sess.run(tf.global_variables_initializer())
+        #参数恢复
+        module_file = tf.train.latest_checkpoint('./HelpPlay/models/tf_lstm/')
+        saver.restore(sess, module_file)
+        test_predict=[]
+        prob=sess.run(pred,feed_dict={X:x})
+        predict=prob.reshape((-1))
+        # 还原等待时间预测值
+        pre_wait_time = predict[0]*sample_std[-1]+sample_mean[-1]
+        print(pre_wait_time)
+
+
+
+if __name__ == "__main__":
+    #dataToTrain,dataToTest = read_csv()
+    #train_lstm(dataToTrain)
+    #prediction(dataToTest)
+    #test_prediction()
+    try_model()

@@ -13,3 +13,20 @@
 
 # python
 ​	处理线程的时候遇到，在传参为函数名字的时候，会在调用的位置执行该传入的函数；在传参为函数名加括号的时候，会优先执行该传参的函数，真坑。
+
+# lstm
+    由于几个输入的维度之间最好步要有相关性，那就只要输入前五分钟的数据好了，再有就是旅游舒适度、节假日和日期的序列。
+
+    influx  -database 'disney' -host 'localhost' -execute 'SELECT * FROM "disney"' -format 'csv' > 0324.csv
+    
+保存：saver.save(session, saved_path, global_step=None)
+恢复：saver.restore(session, saved_path) 保存的文件有四种：
+1. checkpoint，保存最近保存的模型的文件名，因此我们能够知道最近的模型名，可以通过调用tf.train.latest_checkpoint(dir)获知
+2. .meta 图的结构，变量等信息
+3. .data 参数值
+4. .index 索引文件
+
+    time step指的是，文本处理中，一个单词代表一个timestep，在inference的时候，只能一个单词一个单词地输出；而在train的时候，我们有整个句子，因此可以一次feed若干个单词，比如Google is better than Apple，timestep为5，同时训练目标为is better than Apple [END]。
+
+    不论batch或者time size是多少，训练输入和预测输入都要一样，如果预测时没有那么多值，就要用0补齐。
+    batch大一些可以提高计算效率，但是消耗也更大。

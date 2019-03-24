@@ -1,5 +1,5 @@
 import logging,time
-from get_disney_date import names,config,api
+import names,config,api
 
 #log_format = "%(asctime)s %(levelname)s [%(name)s] - %(message)s"
 #logging.basicConfig(format=log_format,filename='disney.log',level=logging.DEBUG)
@@ -61,4 +61,5 @@ def get_now_data():
 
     return view_waitTime
 
-
+if __name__ == "__main__":
+    api.save_to_json()
