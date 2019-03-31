@@ -1,31 +1,36 @@
-from coors import COORS
+from coors import AllName
 from get_disney_date import fetch
 import requests,json
 
 WALK_SPEED = 1
 KEY = '&key=H6ZBZ-IIEHJ-FGAFO-KCJ67-MPPJT-W3BZG'
+allName = AllName()
 
 def one_next(location):
     print('...开始计算下一个去哪里玩。。。')
-    des_list = []
-    [des_list.append((value['lat'],value['lng'],key)) for key,value in COORS.items()]
+    
+    # 这里是返回一个游乐点经纬度坐标的列表用于计算时间
+    des_list = allName.getCoor(key = None)
     # dis_list = sorted(cal_time(location,des_list).items(),key = lambda item:item[1])
-    dis_list = cal_time(location,des_list)
+    # 计算时间
+    time_dict = cal_time(location,des_list)
 
     print('...获取当前游乐园排队时间。。。')
     view_waitTime = fetch.get_now_data()
 
+    # 合并步行时间和当前排队时间
     for key ,value in view_waitTime.items():
-        new_time = value+dis_list[key]
-        dis_list[key] = new_time
+        new_time = value+time_dict[key]
+        time_dict[key] = new_time
     
-    final_time = sorted(dis_list.items(),key = lambda item:item[1])
-    final_location_dict = COORS[final_time[0][0]]
-    way = get_way(location,final_location_dict)
+    # 排序获得最快到达的，然后计算路线的polylines
+    final_time = sorted(time_dict.items(),key = lambda item:item[1])
+    final_des = allName.getCoor(key=final_time[0][0])
+    polyLines = get_way(location,final_des)
 
     #print(view_waitTime)
 
-    return way
+    return polyLines
 
 def cal_time(orig,des_list):
     base_url = 'https://apis.map.qq.com/ws/distance/v1/?mode=walking'
@@ -42,15 +47,16 @@ def cal_time(orig,des_list):
     elements_list = time_dict['result']['elements']
     dis_dict = dict()
     index = 0
-    for key,value in COORS.items():
+    for key,value in allName.items():
         dis_dict[key] = elements_list[index]['distance']/WALK_SPEED
+        index= index+1
 
     return dis_dict
 
-def get_way(orig,dest_dict):
+def get_way(orig,destination):
     base_url = 'https://apis.map.qq.com/ws/direction/v1/walking/?'
     ori_posi = '&from='+str(orig[0])+','+str(orig[1])
-    des_posi = '&to='+str(dest_dict['lat'])+','+str(dest_dict['lng'])
+    des_posi = '&to='+str(destination[0])+','+str(destination[1])
 
     url = base_url+ori_posi+des_posi+KEY
     response = requests.get(url)

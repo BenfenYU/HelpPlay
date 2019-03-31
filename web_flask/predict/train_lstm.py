@@ -47,8 +47,10 @@ lr = 0.0006  # 学习率
 epochs = 500
 originalData = []
 
-sample_mean = np.array([70.76278837,  1.29588766, 34.13239719]) 
-sample_std = np.array([41.18567931 ,0.45644075 ,17.66665945])
+sample_mean = np.array([70.76278837,  1.29588766]) 
+sample_std = np.array([41.18567931 ,0.45644075])
+y_mean = 17.899
+y_std = 20.111
 
 # 输入层、输出层权重、偏置
 weights = {
@@ -174,8 +176,8 @@ def try_model(pre_data_list,time_step = 1):
     X = tf.placeholder(tf.float32, shape=[None, time_step, input_size])
     #mean,std,test_x,test_y=get_test_data([[20,2,0]],time_step,test_begin=0)
     normalized_data= (np.array(pre_data_list)-sample_mean)/sample_std 
-    x = [[normalized_data[:-1].tolist()]]
-    y = [normalized_data[-1]]
+    x = [[normalized_data.tolist()]]
+    #y = [normalized_data[-1]]
     #print(x,y)
     with tf.variable_scope("sec_lstm",reuse=tf.AUTO_REUSE):
         pred,_=lstm(X)
@@ -191,5 +193,9 @@ def try_model(pre_data_list,time_step = 1):
         prob=sess.run(pred,feed_dict={X:x})
         predict=prob.reshape((-1))
         # 还原等待时间预测值
-        pre_wait_time = predict[0]*sample_std[-1]+sample_mean[-1]
+        pre_wait_time = predict[0]*y_std+y_mean
         print(pre_wait_time)
+    
+    return pre_wait_time
+
+#time = try_model([10,2])

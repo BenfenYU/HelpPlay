@@ -1,5 +1,6 @@
 import logging,time
-import names,config,api
+import get_disney_date
+from get_disney_date import config,api
 
 #log_format = "%(asctime)s %(levelname)s [%(name)s] - %(message)s"
 #logging.basicConfig(format=log_format,filename='disney.log',level=logging.DEBUG)
@@ -26,7 +27,7 @@ def make_datas(return_now = False):
             }
             datapoints.append(datapoint)
 
-            view_waitTime[a.zhName] = float(a.wait_minutes)
+            view_waitTime[a.name] = float(a.wait_minutes)
             #logging.info("%s wait: %sm;" % (a.zhName, a.wait_minutes)\
             #    +" singleRider: {}; FP: {};".format(a.single_rider,a.fastPass))
     

@@ -1,5 +1,5 @@
 import requests,time
-import names
+from get_disney_date import names
 
 class Attraction(object):
 
