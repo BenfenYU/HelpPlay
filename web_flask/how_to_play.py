@@ -1,4 +1,4 @@
-from coors import AllName
+from coors import AllName,NAMES
 from get_disney_date import fetch
 import requests,json
 
@@ -6,22 +6,45 @@ WALK_SPEED = 1
 KEY = '&key=H6ZBZ-IIEHJ-FGAFO-KCJ67-MPPJT-W3BZG'
 allName = AllName()
 
-def one_next(location):
+def agent(plan,lat,lng,kind=None):
+    orig_location = (float(lat),float(lng))
+    if kind:
+        kind = int(kind)
+        polyLines = plan(orig_location,kind)
+    else:
+        polyLines = plan(orig_location)
+
+    return polyLines
+
+def one_wish(orig_location,kind):
+    # 從大的字典中抽取一部分記錄
+    dest_dict = allName.get_kind(kind)
+    polyLines = one_next(orig_location,names = dest_dict)
+
+    return polyLines
+
+def one_next(location,names=NAMES):
     print('...开始计算下一个去哪里玩。。。')
     
     # 这里是返回一个游乐点经纬度坐标的列表用于计算时间
-    des_list = allName.getCoor(key = None)
+    des_list = allName.getCoor(key = None,names=names)
     # dis_list = sorted(cal_time(location,des_list).items(),key = lambda item:item[1])
-    # 计算时间
-    time_dict = cal_time(location,des_list)
+    # 计算时间,返回時間的列表
+    time_list = cal_time(location,des_list)
 
     print('...获取当前游乐园排队时间。。。')
     view_waitTime = fetch.get_now_data()
 
     # 合并步行时间和当前排队时间
-    for key ,value in view_waitTime.items():
-        new_time = value+time_dict[key]
-        time_dict[key] = new_time
+    time_dict = dict()
+    index = 0
+    try:
+        for key ,value in names.items():
+            new_time = view_waitTime[key]+time_list[index]
+            time_dict[key] = new_time
+    except KeyError as k:
+        print(k)
+        pass
     
     # 排序获得最快到达的，然后计算路线的polylines
     final_time = sorted(time_dict.items(),key = lambda item:item[1])
@@ -45,13 +68,11 @@ def cal_time(orig,des_list):
     time_dict = json.loads(response.text)
 
     elements_list = time_dict['result']['elements']
-    dis_dict = dict()
-    index = 0
-    for key,value in allName.items():
-        dis_dict[key] = elements_list[index]['distance']/WALK_SPEED
-        index= index+1
+    dis_list = []
+    for i in range(len(des_list)):
+        dis_list.append(elements_list[i]['distance']/WALK_SPEED)
 
-    return dis_dict
+    return dis_list
 
 def get_way(orig,destination):
     base_url = 'https://apis.map.qq.com/ws/direction/v1/walking/?'
@@ -60,9 +81,12 @@ def get_way(orig,destination):
 
     url = base_url+ori_posi+des_posi+KEY
     response = requests.get(url)
-    result_lines = {"polylines":json.loads(response.text)['result']['routes'][0]['polyline']}
-    print(result_lines)
 
+    # 返回給小程序的必須是json字符串
+    result_lines = json.dumps({"polylines":json.loads(response.text)['result']['routes'][0]['polyline']})
+    #print(result_lines)
+
+    print(type(result_lines))
     return result_lines
 
 

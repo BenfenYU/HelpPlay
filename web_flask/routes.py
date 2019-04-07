@@ -7,11 +7,10 @@ from flask import Flask
 from how_to_play import *
 #from calculate import calculate_time
 
-plans = {'1':one_next}
 
 app = Flask(__name__)
+plans = {'1':one_next,'2':one_wish}
 
-functionDict={'play_next_one':one_next}
 
 @app.route('/')
 def hello():
@@ -19,17 +18,16 @@ def hello():
 
 @app.route('/plan/plan=<plan>&origin=<lat>,<lng>')
 def plan_later(plan,lat,lng):
-    orig_location = (float(lat),float(lng))
-    polyLines = str(plans[plan](orig_location))
+    polyLines = agent(plans[plan],lat,lng)
 
     return polyLines
-    
 
-@app.route('/<doWhat>&<args>')
-def cal():
-    functionDict[doWhat](args)
-    
-    return doWhat+args
+# 有大類景點意願，用kind傳參
+@app.route('/plan/plan=<plan>&origin=<lat>,<lng>&kind=<kind>')
+def plan_line(plan,lat,lng,kind):
+    polyLines = agent(plans[plan],lat,lng,kind)
+
+    return polyLines
     
 if __name__ == '__main__':
     app.run()
