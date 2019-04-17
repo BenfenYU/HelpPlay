@@ -7,11 +7,13 @@
 ​    Tensor-张量是基本的变量，然后进一步进行运算需要张量进化成图变量，然后初始化，然后在run()中进行计算。
     
     
-    time step是时间步长，即用time_step个时间连续的数据来预测下一个时间的数据，其input格式是[batch_size, time_step, input_size]，input_size是时间维度，
+    time step是时间步长，即用time_step个时间连续的数据来预测下一个时间的数据，
+其input格式是[batch_size, time_step, input_size]，input_size是时间维度，
 自己现在的网络有偏差，所以决定先跑通，再仔细研究网络。'https://blog.csdn.net/frankiehello/article/details/79953482'可读。
 也可以理解为展开的rnn或者lstm的block的个数。举个例子，如果是用rnn来做预测，输入1000条数据进行训练，
 这1000条数据分为了10个batch，那么每个batch的batchsize就是100，然后我们如果是用前四个数值来预测第五个值的话，
 输入的数据shape就是（100，4），这四个数值在时间上是连续的，所以图中的X0、X1、X2、X3就对应了这四个值，所以timestep就是4。
+timesteps 就是 LSTM 认为每个输入数据与前多少个陆续输入的数据有联系。
 
 
 保存：saver.save(session, saved_path, global_step=None)
