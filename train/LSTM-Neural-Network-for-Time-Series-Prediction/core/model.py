@@ -75,6 +75,7 @@ class Model():
 		callbacks = [
 			ModelCheckpoint(filepath=save_fname, monitor='loss', save_best_only=True)
 		]
+		print(epochs)
 		self.model.fit_generator(
 			data_gen,
 			steps_per_epoch=steps_per_epoch,

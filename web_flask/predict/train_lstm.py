@@ -8,7 +8,7 @@
     
     
     time step是时间步长，即用time_step个时间连续的数据来预测下一个时间的数据，
-其input格式是[batch_size, time_step, input_size]，input_size是时间维度，
+其input格式是[batch_size, time_step, input_size]，input_size是输入的训练数据的的维度，
 自己现在的网络有偏差，所以决定先跑通，再仔细研究网络。'https://blog.csdn.net/frankiehello/article/details/79953482'可读。
 也可以理解为展开的rnn或者lstm的block的个数。举个例子，如果是用rnn来做预测，输入1000条数据进行训练，
 这1000条数据分为了10个batch，那么每个batch的batchsize就是100，然后我们如果是用前四个数值来预测第五个值的话，
