@@ -1,5 +1,4 @@
 '''
-
     epoch，处理完所有数据并返回一次为一个epoch，1个epoch表示过了1遍训练集中的所有样本；batch-size：1次迭代所使用的样本量，由于数据量太大，
 所以数据要分块的送进假设函数进行处理以及梯度下降，分成的块的一块就是一个batch；number of batch，是把所有数据分成了几个batch。
 ​    在TensorFlow的世界里，变量的定义和初始化是分开的，所有关于图变量的赋值和计算都要通过tf.Session的run来进行。想
@@ -40,7 +39,7 @@ import matplotlib.pyplot as plt
 import os,math
 import tensorflow as tf
 
-csv_file_name = './HelpPlay/data/BuzzLightyearPlanetRescue.csv'
+csv_file_name = './data/BuzzLightyearPlanetRescue.csv'
 rnn_unit = 10  # 隐层数量
 input_size =2 
 output_size = 1

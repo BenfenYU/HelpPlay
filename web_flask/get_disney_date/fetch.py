@@ -1,6 +1,6 @@
 import logging,time
-import get_disney_date
-from get_disney_date import config,api
+#import get_disney_date
+import config,api
 
 #log_format = "%(asctime)s %(levelname)s [%(name)s] - %(message)s"
 #logging.basicConfig(format=log_format,filename='disney.log',level=logging.DEBUG)
