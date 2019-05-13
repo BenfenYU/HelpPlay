@@ -79,7 +79,11 @@ class DataLoader():
             normalised_window = []
             for col_i in range(window.shape[1]):
                 try:
-                    normalised_col = [((float(p) / float(window[0, col_i])) - 1) for p in window[:, col_i]]
+                    num = float(window[0,col_i])
+                    if num==0:
+                        print(num)
+                        num = 0.1
+                    normalised_col = [((float(p) / num) - 1) for p in window[:, col_i]]
                 except ZeroDivisionError as z:
                     print(z)
                     normalised_col = [(float(p) / 0.1 - 1) for p in window[:, col_i]]

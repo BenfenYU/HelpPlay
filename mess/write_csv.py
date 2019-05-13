@@ -1,4 +1,5 @@
 import time
+import matplotlib.pyplot as plt
 
 baseName = './HelpPlay/data/'
 dataName = baseName+"disneyData"
@@ -31,13 +32,13 @@ def readTime():
                     holiday = 1
                     if not 8 <= hour <20 :
                         natureNum = 1 
-                        continue
+                        #continue
                     if week_day == 5 or week_day == 6:
                         holiday = 2
                     #if day ==2 :
                     #    continue
-                    if wait_time==-1:
-                        continue
+                    #if wait_time==-1:
+                        #continue
                     yield (natureNum,holiday,wait_time)
                     before = wait_time
                     natureNum = natureNum+1
@@ -53,10 +54,27 @@ def writeToCsv():
                 #before = every[1]
                 holiday = every[1]
                 wait_time = every[2]
-                fp.write(str(num)+','+str(holiday)+','+str(wait_time)+'\n')
+                fp.write(str(wait_time)+'\n')
             except StopIteration :
                 return
 
+def readAndPlot():
+    times = []
+    n = 0
+    with open('E:\Projects\helpplay\HelpPlay\data\BuzzLightyearPlanetRescue.csv','r') as f:
+        while True:
+            n = n+1
+            try:
+                time = int(f.readline().strip('\n'))
+            except ValueError as v:
+                print(n)
+                break
+                
+            times.append(time)
+    plt.figure()
+    plt.plot(times)
+    plt.show()
 
 if __name__ == "__main__":
-    writeToCsv()
+    #writeToCsv()
+    readAndPlot()

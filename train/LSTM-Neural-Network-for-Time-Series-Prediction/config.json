@@ -5,12 +5,12 @@
 		"columns": [
 			"wait_time"
 		],
-		"sequence_length": 21,
+		"sequence_length": 31,
 		"train_test_split": 0.85,
-		"normalise": true
+		"normalise": false
 	},
 	"training": {
-		"epochs": 2,
+		"epochs": 50,
 		"batch_size": 64
 	},
 	"model": {
@@ -20,23 +20,9 @@
 		"layers": [
 			{
 				"type": "lstm",
-				"neurons": 100,
-				"input_timesteps": 20,
+				"neurons": 200,
+				"input_timesteps": 30,
 				"input_dim": 1,
-				"return_seq": true
-			},
-			{
-				"type": "dropout",
-				"rate": 0.2
-			},
-			{
-				"type": "lstm",
-				"neurons": 100,
-				"return_seq": true
-			},
-			{
-				"type": "lstm",
-				"neurons": 100,
 				"return_seq": false
 			},
 			{

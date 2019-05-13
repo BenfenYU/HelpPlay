@@ -12,6 +12,7 @@ class Model():
 	"""A class for an building and inferencing an lstm model"""
 
 	def __init__(self):
+		# 初始化一个空的序列模型，下面用add增加图层
 		self.model = Sequential()
 
 	def load_model(self, filepath):
@@ -31,10 +32,12 @@ class Model():
 			input_dim = layer['input_dim'] if 'input_dim' in layer else None
 
 			if layer['type'] == 'dense':
+				# 加一个全连接层
 				self.model.add(Dense(neurons, activation=activation))
 			if layer['type'] == 'lstm':
 				self.model.add(LSTM(neurons, input_shape=(input_timesteps, input_dim), return_sequences=return_seq))
 			if layer['type'] == 'dropout':
+				# dropout应用于输入
 				self.model.add(Dropout(dropout_rate))
 
 		self.model.compile(loss=configs['model']['loss'], optimizer=configs['model']['optimizer'])

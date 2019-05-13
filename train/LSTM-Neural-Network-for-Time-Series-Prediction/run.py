@@ -42,7 +42,7 @@ def plot_results_multiple(predicted_data, true_data, prediction_len):
 
 
 def main():
-    configs = json.load(open('config.json', 'r'))
+    configs = json.load(open('E:\Projects\helpplay\HelpPlay\\train\LSTM-Neural-Network-for-Time-Series-Prediction\config.json', 'r'))
     if not os.path.exists(configs['model']['save_dir']): os.makedirs(configs['model']['save_dir'])
 
     data = DataLoader(
@@ -58,16 +58,15 @@ def main():
         normalise=configs['data']['normalise']
     )
 
-    '''
 	# in-memory training
-	model.train(
-		x,
-		y,
-		epochs = configs['training']['epochs'],
-		batch_size = configs['training']['batch_size'],
-		save_dir = configs['model']['save_dir']
-	)
-	'''
+    model.train(
+    x,
+    y,
+    epochs = configs['training']['epochs'],
+    batch_size = configs['training']['batch_size'],
+    save_dir = configs['model']['save_dir']
+    )
+    '''
     # out-of memory generative training
     steps_per_epoch = math.ceil((data.len_train - configs['data']['sequence_length']) / configs['training']['batch_size'])
     model.train_generator(
@@ -82,6 +81,7 @@ def main():
         save_dir=configs['model']['save_dir']
     )
 
+    '''
     x_test, y_test = data.get_test_data(
         seq_len=configs['data']['sequence_length'],
         normalise=configs['data']['normalise']
@@ -89,12 +89,35 @@ def main():
 
     #predictions = model.predict_sequences_multiple(x_test, configs['data']['sequence_length'], configs['data']['sequence_length'])
     #predictions = model.predict_sequence_full(x_test, configs['data']['sequence_length'])
-    predictions = model.predict_point_by_point(x)#_test)
+    predictions = model.predict_point_by_point(x_test)#_test)
 
     #plot_results_multiple(predictions, y, configs['data']['sequence_length'])
-    plot_results(predictions, y)
+    plot_results(predictions, y_test)
 
+def main_plot():
+    configs = json.load(open('E:\Projects\helpplay\HelpPlay\\train\LSTM-Neural-Network-for-Time-Series-Prediction\config.json', 'r'))
+    if not os.path.exists(configs['model']['save_dir']): os.makedirs(configs['model']['save_dir'])
+    data = DataLoader(
+        os.path.join('data', configs['data']['filename']),
+        configs['data']['train_test_split'],
+        configs['data']['columns']
+    )
+
+    x, y = data.get_train_data(
+        seq_len=configs['data']['sequence_length'],
+        normalise=configs['data']['normalise']
+    )
+    model = Model()
+    model.load_model('E:\Projects\helpplay\HelpPlay\\train\LSTM-Neural-Network-for-Time-Series-Prediction\saved_models\\13052019-141606-e2.h5')
+    pre_x = model.predict_point_by_point(x)
+    print(pre_x)
+    print(y)
+    plt.plot(y)
+    plt.show()
+
+    
 
 if __name__ == '__main__':
+    # main()
     main()
     #plot_results_multiple([1,2,3],[2,3,4],0)

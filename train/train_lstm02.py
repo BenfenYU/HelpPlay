@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import os,math
 import tensorflow as tf
 
-csv_file_name = './HelpPlay/data/BuzzLightyearPlanetRescue.csv'
+csv_file_name = './data/BuzzLightyearPlanetRescue.csv'
 rnn_unit = 10  # 隐层数量
 input_size =2 
 output_size = 1
@@ -238,8 +238,8 @@ def try_model(time_step = 1):
 
 
 if __name__ == "__main__":
-    #dataToTrain,dataToTest = read_csv()
-    #train_lstm(dataToTrain)
-    #prediction(dataToTest)
-    #test_prediction()
-    try_model()
+    dataToTrain,dataToTest = read_csv()
+    train_lstm(dataToTrain)
+    prediction(dataToTest)
+    test_prediction()
+    #try_model()
