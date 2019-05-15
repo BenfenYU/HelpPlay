@@ -11,7 +11,7 @@ import math
 import matplotlib.pyplot as plt
 from core.data_processor import DataLoader
 from core.model import Model
-
+import numpy as np
 
 def plot_results(predicted_data, true_data):
     fig = plt.figure(facecolor='white')
@@ -20,7 +20,6 @@ def plot_results(predicted_data, true_data):
     plt.plot(predicted_data, label='Prediction')
     plt.legend()
     plt.show()
-
 
 def plot_results_multiple(predicted_data, true_data, prediction_len):
     print(predicted_data)
@@ -40,7 +39,6 @@ def plot_results_multiple(predicted_data, true_data, prediction_len):
     '''
     plt.show()
 
-
 def main():
     configs = json.load(open('E:\Projects\helpplay\HelpPlay\\train\LSTM-Neural-Network-for-Time-Series-Prediction\config.json', 'r'))
     if not os.path.exists(configs['model']['save_dir']): os.makedirs(configs['model']['save_dir'])
@@ -48,7 +46,8 @@ def main():
     data = DataLoader(
         os.path.join('data', configs['data']['filename']),
         configs['data']['train_test_split'],
-        configs['data']['columns']
+        configs['data']['columns'],
+         normalise_meth=configs['data']['normalise']
     )
 
     model = Model()
@@ -86,13 +85,15 @@ def main():
         seq_len=configs['data']['sequence_length'],
         normalise=configs['data']['normalise']
     )
+    
+    
 
     #predictions = model.predict_sequences_multiple(x_test, configs['data']['sequence_length'], configs['data']['sequence_length'])
     #predictions = model.predict_sequence_full(x_test, configs['data']['sequence_length'])
-    predictions = model.predict_point_by_point(x_test)#_test)
+    predictions = model.predict_point_by_point(x)#_test)
 
     #plot_results_multiple(predictions, y, configs['data']['sequence_length'])
-    plot_results(predictions, y_test)
+    plot_results(predictions, y)
 
 def main_plot():
     configs = json.load(open('E:\Projects\helpplay\HelpPlay\\train\LSTM-Neural-Network-for-Time-Series-Prediction\config.json', 'r'))
@@ -114,8 +115,6 @@ def main_plot():
     print(y)
     plt.plot(y)
     plt.show()
-
-    
 
 if __name__ == '__main__':
     # main()

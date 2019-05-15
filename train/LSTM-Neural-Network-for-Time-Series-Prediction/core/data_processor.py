@@ -5,15 +5,21 @@ import pandas as pd
 class DataLoader():
     """A class for loading and transforming data for the lstm model"""
 
-    def __init__(self, filename, split, cols):
+    def __init__(self, filename, split, cols,normalise_meth):
         dataframe = pd.read_csv(filename)
         i_split = int(len(dataframe) * split)
-        self.data_train = dataframe.get(cols).values[:i_split]
-        self.data_test  = dataframe.get(cols).values[i_split:]
+        # 归一化config文件中"false是使用整体数据的最大最小值进行归一化，true是代码自带的方法归一化。",
+        if not normalise_meth:
+            self.data_all = self.normalize(dataframe.get(cols).values)
+        else:
+            self.data_all = dataframe.get(cols).values
+        self.data_train = self.data_all[:i_split]
+        self.data_test  = self.data_all[i_split:]
         #print(self.data_test)
         self.len_train  = len(self.data_train)
-        self.len_test   = len(self.data_test)
+        self.len_test  = len(self.data_test)
         self.len_train_windows = None
+        self.normalise_meth = normalise_meth
 
     def get_test_data(self, seq_len, normalise):
         '''
@@ -91,3 +97,17 @@ class DataLoader():
             normalised_window = np.array(normalised_window).T # reshape and transpose array back into original multidimensional format
             normalised_data.append(normalised_window)
         return np.array(normalised_data)
+
+    def normalize(self,data):
+        self.delta = max(data) - min(data)
+        self.min_data = min(data)
+        if self.delta != 0:
+            for i in range(0, len(data)):
+                data[i] = (data[i]-min(data))/self.delta
+        return  data
+    
+    def de_normalize(self,data):
+        for i in range(0,len(data)):
+            data[i] = data[i]*self.delta+self.min_data
+        
+        return data
