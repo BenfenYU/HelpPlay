@@ -40,7 +40,9 @@ class Model():
 				# dropout应用于输入
 				self.model.add(Dropout(dropout_rate))
 
-		self.model.compile(loss=configs['model']['loss'], optimizer=configs['model']['optimizer'])
+		# 编译模型，一般在建立模型的时候才会用到，主要是配置优化器、损失函数等等，在预测的时候不用编译了。
+		self.model.compile(loss=configs['model']['loss'], optimizer=configs['model']['optimizer']
+		,metrics=['mae', 'acc'])
 
 		print('[Model] Model Compiled')
 		timer.stop()

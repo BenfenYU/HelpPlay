@@ -10,7 +10,7 @@
 		"normalise": false 
 	},
 	"training": {
-		"epochs": 10,
+		"epochs": 1,
 		"batch_size": 64
 	},
 	"model": {
@@ -20,7 +20,7 @@
 		"layers": [
 			{
 				"type": "lstm",
-				"neurons": 200,
+				"neurons": 10,
 				"input_timesteps": 30,
 				"input_dim": 1,
 				"return_seq": false
@@ -31,7 +31,7 @@
 			},
 			{
 				"type": "dense",
-				"neurons": 200,
+				"neurons": 10,
 				"activation": "relu"
 			},
 			{

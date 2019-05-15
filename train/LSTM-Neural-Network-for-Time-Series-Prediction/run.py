@@ -85,6 +85,8 @@ def main():
         seq_len=configs['data']['sequence_length'],
         normalise=configs['data']['normalise']
     )
+    #loss, accuracy = model.model.evaluate(x_test, y_test)
+    #print(loss,accuracy)
     
     
 
