@@ -13,6 +13,8 @@ from core.data_processor import DataLoader
 from core.model import Model
 import numpy as np
 
+from core.model import newest_model
+
 def plot_results(predicted_data, true_data):
     fig = plt.figure(facecolor='white')
     ax = fig.add_subplot(111)
@@ -40,7 +42,8 @@ def plot_results_multiple(predicted_data, true_data, prediction_len):
     plt.show()
 
 def main():
-    configs = json.load(open('E:\Projects\helpplay\HelpPlay\\train\LSTM-Neural-Network-for-Time-Series-Prediction\config.json', 'r'))
+    config_file = '/home/bf/Documents/Projects/helpplay/HelpPlay/train/LSTM-Neural-Network-for-Time-Series-Prediction/config.json'
+    configs = json.load(open(config_file, 'r'))
     if not os.path.exists(configs['model']['save_dir']): os.makedirs(configs['model']['save_dir'])
 
     data = DataLoader(
@@ -98,27 +101,32 @@ def main():
     plot_results(predictions, y)
 
 def main_plot():
-    configs = json.load(open('E:\Projects\helpplay\HelpPlay\\train\LSTM-Neural-Network-for-Time-Series-Prediction\config.json', 'r'))
+    config_file = '/home/bf/Documents/Projects/helpplay/HelpPlay/train/LSTM-Neural-Network-for-Time-Series-Prediction/config.json'
+    configs = json.load(open(config_file, 'r'))
     if not os.path.exists(configs['model']['save_dir']): os.makedirs(configs['model']['save_dir'])
     data = DataLoader(
         os.path.join('data', configs['data']['filename']),
         configs['data']['train_test_split'],
-        configs['data']['columns']
+        configs['data']['columns'],
+        normalise_meth=configs['data']['normalise']
     )
 
-    x, y = data.get_train_data(
+    x, y = data.get_test_data(
         seq_len=configs['data']['sequence_length'],
         normalise=configs['data']['normalise']
     )
     model = Model()
-    model.load_model('E:\Projects\helpplay\HelpPlay\\train\LSTM-Neural-Network-for-Time-Series-Prediction\saved_models\\13052019-141606-e2.h5')
-    pre_x = model.predict_point_by_point(x)
-    print(pre_x)
-    print(y)
-    plt.plot(y)
-    plt.show()
+    global newest_model
+    if newest_model:
+        model_way = newest_model
+    else:
+        model_way = '/home/bf/Documents/Projects/helpplay/HelpPlay/train/LSTM-Neural-Network-for-Time-Series-Prediction/saved_models/19052019-220124-e30.h5'
+    model.load_model(model_way)
+    print(model.model.evaluate(x, y))
+    pre_y = model.predict_point_by_point(x)
+    plot_results(pre_y,y)
 
 if __name__ == '__main__':
-    # main()
     main()
+    #main_plot()
     #plot_results_multiple([1,2,3],[2,3,4],0)

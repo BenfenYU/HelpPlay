@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 将等待时间做平滑处理，如[5,5,5,5,5,10]变成[5,6,7,8,9,10]
 '''
 
-data_csv = 'BuzzLightyearPlanetRescue.csv'
+data_csv = 'temp.csv'
 one_dim = 'one_dim_time.csv'
 
 def write_data():
@@ -48,17 +48,15 @@ def write_data():
         
         #x = [fp.write(str(time)+'\n') for time in final_list]
         X = [_ for _ in range(1,len(final_list)+1)]
-        y = origin_list#final_list
+        y = final_list
         plt.plot(X,y)
         plt.show()
 
 def get_data():
     with open(data_csv,'r') as fp:
-        wait_times = []
+        fp.readline()
         for line in fp:
-            data_list = line.split(',')
-            wait_time = data_list[1]
-            wait_times.append(wait_time)
+            wait_time = line.strip()
             yield int(wait_time)
 
 write_data()

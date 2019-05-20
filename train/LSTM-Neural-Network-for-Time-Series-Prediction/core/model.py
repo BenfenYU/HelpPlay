@@ -8,6 +8,8 @@ from keras.layers import Dense, Activation, Dropout, LSTM
 from keras.models import Sequential, load_model
 from keras.callbacks import EarlyStopping, ModelCheckpoint
 
+newest_model = ''
+
 class Model():
 	"""A class for an building and inferencing an lstm model"""
 
@@ -42,7 +44,7 @@ class Model():
 
 		# 编译模型，一般在建立模型的时候才会用到，主要是配置优化器、损失函数等等，在预测的时候不用编译了。
 		self.model.compile(loss=configs['model']['loss'], optimizer=configs['model']['optimizer']
-		,metrics=['mae', 'acc'])
+		,metrics=['mae'])
 
 		print('[Model] Model Compiled')
 		timer.stop()
@@ -66,6 +68,9 @@ class Model():
 			callbacks=callbacks
 		)
 		self.model.save(save_fname)
+
+		global newest_model
+		newest_model = save_fname
 
 		print('[Model] Training Completed. Model saved as %s' % save_fname)
 		timer.stop()
