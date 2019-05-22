@@ -1,14 +1,16 @@
 '''
 from February 3rd 2019 9:00 to April 13rd 2019 11:10
+只保留9到20点的
 '''
 
-import time,copy
+import time,copy,json,os
 import matplotlib.pyplot as plt
 import re
 import numpy as np
 from scipy import interpolate
 import matplotlib.pyplot as plt
-
+from core.data_processor import DataLoader
+from core.model import Model
 
 baseName = './data/'
 dataName = baseName+"disney_data"
@@ -123,7 +125,55 @@ def quadraticSmooth5():
     
     return out
 
+def predict_prepare():
+    config_file = '/home/bf/Documents/Projects/helpplay/HelpPlay/train/LSTM-Neural-Network-for-Time-Series-Prediction/config.json'
+    configs = json.load(open(config_file, 'r'))
+    if not os.path.exists(configs['model']['save_dir']): os.makedirs(configs['model']['save_dir'])
+
+    data_loader = DataLoader(
+        os.path.join('data', configs['data']['filename']),
+        configs['data']['train_test_split'],
+        configs['data']['columns'],
+         normalise_meth=configs['data']['normalise']
+    )
+
+    data_all = data_loader.data_all
+    data_need = [[data_all[-30:]]]
+    print(data_need)
+    model = Model()
+    model_way = '/home/bf/Documents/Projects/helpplay/HelpPlay/train/LSTM-Neural-Network-for-Time-Series-Prediction/saved_models/20052019-174244-e60.h5'
+    model.load_model(model_way)
+
+    hour = 11
+    start_hour = 9
+    minute = 15
+    add_minute = 5
+    day = 13
+    max_day = 30
+    month = 4
+    data_new = []
+
+    while True:
+        pre_y = model.predict_point_by_point(data_need)
+        data_new.append(pre_y)
+        # 这里拼接要注意
+        data_all.append(pre_y)
+        data_need = [data_all[-30:]]
+        minute = minute+add_minute 
+        if minute>=60:
+            minute = minute-60
+            hour = hour+1
+            if hour >= 20 :
+                hour = start_hour
+                day = day + 1
+                if day > max_day:
+                    month = month +1
+                    if month >= 5:
+                        print(data_new)
+                        return 
+
 
 if __name__ == "__main__":
     #readTime()
-    write_data()
+    #write_data()
+    predict_prepare()

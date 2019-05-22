@@ -127,6 +127,6 @@ def main_plot():
     plot_results(pre_y,y)
 
 if __name__ == '__main__':
-    main()
+    main_plot()
     #main_plot()
     #plot_results_multiple([1,2,3],[2,3,4],0)
