@@ -10,7 +10,7 @@ import time
 import math
 import matplotlib.pyplot as plt
 from core.data_processor import DataLoader
-from core.model import Model
+from core.model import Model,LossHistory
 import numpy as np
 
 from core.model import newest_model
@@ -55,7 +55,14 @@ def main():
 
     model = Model()
     model.build_model(configs)
+    history = LossHistory()
+
     x, y = data.get_train_data(
+        seq_len=configs['data']['sequence_length'],
+        normalise=configs['data']['normalise']
+    )
+
+    x_test, y_test = data.get_test_data(
         seq_len=configs['data']['sequence_length'],
         normalise=configs['data']['normalise']
     )
@@ -66,7 +73,10 @@ def main():
     y,
     epochs = configs['training']['epochs'],
     batch_size = configs['training']['batch_size'],
-    save_dir = configs['model']['save_dir']
+    save_dir = configs['model']['save_dir'],
+    history = history,
+    x_test=x_test, 
+    y_test = y_test
     )
     '''
     # out-of memory generative training
@@ -84,10 +94,8 @@ def main():
     )
 
     '''
-    x_test, y_test = data.get_test_data(
-        seq_len=configs['data']['sequence_length'],
-        normalise=configs['data']['normalise']
-    )
+    
+    history.loss_plot('epoch')
     #loss, accuracy = model.model.evaluate(x_test, y_test)
     #print(loss,accuracy)
     
@@ -120,13 +128,15 @@ def main_plot():
     if newest_model:
         model_way = newest_model
     else:
-        model_way = '/home/bf/Documents/Projects/helpplay/HelpPlay/train/LSTM-Neural-Network-for-Time-Series-Prediction/saved_models/19052019-220124-e30.h5'
+        model_way = '/home/bf/Documents/Projects/helpplay/HelpPlay/train/LSTM-Neural-Network-for-Time-Series-Prediction/saved_models/10062019-163648-e40.h5'
     model.load_model(model_way)
     print(model.model.evaluate(x, y))
     pre_y = model.predict_point_by_point(x)
+    print(x)
     plot_results(pre_y,y)
 
 if __name__ == '__main__':
-    main_plot()
-    #main_plot()
+    
+    main_plot() # 用来测试集
+    #main() # 用来训练新模型
     #plot_results_multiple([1,2,3],[2,3,4],0)

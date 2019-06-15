@@ -157,8 +157,10 @@ def predict_prepare():
         pre_y = model.predict_point_by_point(data_need)
         data_new.append(pre_y)
         # 这里拼接要注意
-        data_all.append(pre_y)
-        data_need = [data_all[-30:]]
+        data_all = np.append(data_all,np.array([pre_y]),0)
+        print(data_all.shape)
+        # 时间序列预测需要输入三维的数据（多加几个[]）
+        data_need = [[data_all[-30:]]]
         minute = minute+add_minute 
         if minute>=60:
             minute = minute-60

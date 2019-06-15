@@ -3,7 +3,7 @@
 之后再加上比较复杂的逻辑，比如规划整体路线。。。
 '''
 
-from flask import Flask
+from flask import Flask,send_file
 from how_to_play import *
 #from calculate import calculate_time
 
@@ -14,15 +14,16 @@ plans = {'1':one_next,'2':one_wish}
 
 @app.route('/')
 def hello():
-    return 'hello 小徐，我的小儿'
+    return send_file("index.html")
 
+# 为用户选择一个可以最快开始游戏的景点
 @app.route('/plan/plan=<plan>&origin=<lat>,<lng>')
 def plan_later(plan,lat,lng):
     polyLines = agent(plans[plan],lat,lng)
 
     return polyLines
 
-# 有大類景點意願，用kind傳參
+# 有大类意愿，用kind传参
 @app.route('/plan/plan=<plan>&origin=<lat>,<lng>&kind=<kind>')
 def plan_line(plan,lat,lng,kind):
     polyLines = agent(plans[plan],lat,lng,kind)

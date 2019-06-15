@@ -1,5 +1,8 @@
+import logging,time
+
+# api.py
+
 import requests,time
-import names
 
 class Attraction(object):
 
@@ -131,3 +134,36 @@ def save_to_json():
 
     print(type(save_json))
 
+
+# fetch.py
+
+def make_datas(return_now = False):
+    view_waitTime = {}
+    datapoints = []
+    for a in attractions():
+        
+        if a.zhName and a.wait_minutes:
+            datapoint = {
+                "measurement": "wait_minutes",
+                "tags": {
+                    "name": a.name,
+                },
+                "fields": {
+                    "value": a.wait_minutes,
+                },
+            }
+            datapoints.append(datapoint)
+
+            view_waitTime[a.name] = float(a.wait_minutes)
+            #logging.info("%s wait: %sm;" % (a.zhName, a.wait_minutes)\
+            #    +" singleRider: {}; FP: {};".format(a.single_rider,a.fastPass))
+    
+    if return_now:
+        return view_waitTime
+
+    return datapoints
+
+def get_now_data():
+    view_waitTime = make_datas(return_now=True)
+
+    return view_waitTime

@@ -1,5 +1,5 @@
 from coors import AllName,NAMES
-from get_disney_date import fetch
+import fetchduration
 import requests,json
 
 WALK_SPEED = 1

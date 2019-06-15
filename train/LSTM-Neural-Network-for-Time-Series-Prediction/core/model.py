@@ -1,5 +1,4 @@
-import os
-import math
+import os, math,keras
 import numpy as np
 import datetime as dt
 from numpy import newaxis
@@ -7,6 +6,7 @@ from core.utils import Timer
 from keras.layers import Dense, Activation, Dropout, LSTM
 from keras.models import Sequential, load_model
 from keras.callbacks import EarlyStopping, ModelCheckpoint
+import matplotlib.pyplot as plt
 
 newest_model = ''
 
@@ -43,13 +43,14 @@ class Model():
 				self.model.add(Dropout(dropout_rate))
 
 		# 编译模型，一般在建立模型的时候才会用到，主要是配置优化器、损失函数等等，在预测的时候不用编译了。
+		# 编译的时候选择loss，优化器和callbacks的metrics
 		self.model.compile(loss=configs['model']['loss'], optimizer=configs['model']['optimizer']
-		,metrics=['mae'])
+		,metrics=["accuracy","mae"])
 
 		print('[Model] Model Compiled')
 		timer.stop()
 
-	def train(self, x, y, epochs, batch_size, save_dir):
+	def train(self, x, y, epochs, batch_size, save_dir,history,x_test = None,y_test = None):
 		timer = Timer()
 		timer.start()
 		print('[Model] Training Started')
@@ -58,14 +59,17 @@ class Model():
 		save_fname = os.path.join(save_dir, '%s-e%s.h5' % (dt.datetime.now().strftime('%d%m%Y-%H%M%S'), str(epochs)))
 		callbacks = [
 			EarlyStopping(monitor='val_loss', patience=2),
-			ModelCheckpoint(filepath=save_fname, monitor='val_loss', save_best_only=True)
+			ModelCheckpoint(filepath=save_fname, monitor='val_loss', save_best_only=True),
+			history
 		]
+		# fit的时候要填入交叉验证集和callback返回值
 		self.model.fit(
 			x,
 			y,
 			epochs=epochs,
 			batch_size=batch_size,
-			callbacks=callbacks
+			callbacks=callbacks,
+			validation_data=(x_test,y_test)
 		)
 		self.model.save(save_fname)
 
@@ -128,3 +132,40 @@ class Model():
 			curr_frame = curr_frame[1:]
 			curr_frame = np.insert(curr_frame, [window_size-2], predicted[-1], axis=0)
 		return predicted
+
+
+class LossHistory(keras.callbacks.Callback):
+    def on_train_begin(self, logs={}):
+        self.losses = {'batch':[], 'epoch':[]}
+        self.accuracy = {'batch':[], 'epoch':[]}
+        self.val_loss = {'batch':[], 'epoch':[]}
+        self.val_acc = {'batch':[], 'epoch':[]}
+ 
+    def on_batch_end(self, batch, logs={}):
+        self.losses['batch'].append(logs.get('loss'))
+        self.accuracy['batch'].append(logs.get('acc'))
+        self.val_loss['batch'].append(logs.get('val_loss'))
+        self.val_acc['batch'].append(logs.get('val_acc'))
+ 
+    def on_epoch_end(self, batch, logs={}):
+        self.losses['epoch'].append(logs.get('loss'))
+        self.accuracy['epoch'].append(logs.get('acc'))
+        self.val_loss['epoch'].append(logs.get('val_loss'))
+        self.val_acc['epoch'].append(logs.get('val_acc'))
+ 
+    def loss_plot(self, loss_type):
+        iters = range(len(self.losses[loss_type]))
+        plt.figure()
+        # acc
+        # plt.plot(iters, self.accuracy[loss_type], 'r', label='train acc')
+        # loss
+        plt.plot(iters, self.losses[loss_type], 'g', label='train loss')
+        if loss_type == 'epoch':
+            # val_acc
+            # plt.plot(iters, self.val_acc[loss_type], 'b', label='val acc')
+            # val_loss
+            plt.plot(iters, self.val_loss[loss_type], 'k', label='val loss')
+        plt.grid(True)
+        plt.xlabel(loss_type)
+        plt.ylabel('acc-loss')
+        plt.legend(loc="upper right")
