@@ -1,5 +1,5 @@
-from coors import AllName,NAMES
-import fetchduration
+from .coors import AllName,NAMES
+#import fetchduration
 import requests,json
 
 WALK_SPEED = 1

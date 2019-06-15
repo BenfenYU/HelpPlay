@@ -16,3 +16,4 @@
         <span class="fm">__init__</span><span class="o">.</span><span class="n">py</span>
 </pre>
 
+    如果一个包里面的几个文件互相引用，那么不如放在同一个文件里面，或者设置一个子包，这样不至于很乱。

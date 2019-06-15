@@ -4,12 +4,12 @@
 '''
 
 from flask import Flask,send_file
-from how_to_play import *
+from caculate import how_to_play as hp
 #from calculate import calculate_time
 
 
 app = Flask(__name__)
-plans = {'1':one_next,'2':one_wish}
+plans = {'1':hp.one_next,'2':hp.one_wish}
 
 
 @app.route('/')
@@ -19,14 +19,14 @@ def hello():
 # 为用户选择一个可以最快开始游戏的景点
 @app.route('/plan/plan=<plan>&origin=<lat>,<lng>')
 def plan_later(plan,lat,lng):
-    polyLines = agent(plans[plan],lat,lng)
+    polyLines = hp.agent(plans[plan],lat,lng)
 
     return polyLines
 
 # 有大类意愿，用kind传参
 @app.route('/plan/plan=<plan>&origin=<lat>,<lng>&kind=<kind>')
 def plan_line(plan,lat,lng,kind):
-    polyLines = agent(plans[plan],lat,lng,kind)
+    polyLines = hp.agent(plans[plan],lat,lng,kind)
 
     return polyLines
     
