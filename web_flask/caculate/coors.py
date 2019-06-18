@@ -2,9 +2,10 @@ import collections
 
 Viewer = collections.namedtuple('Viewer','name lng lat duration kind')
 
+# Viewer(名字，经度，纬度，游玩时间，种类)
 NAMES = {
-    #'MeetDroidFriends': Viewer( '？？？',121.656853,  31.140631,0,0),
-    'TronLightcyclePowerRun': Viewer( '创极速光轮',121.656807,  31.141859,900,1),
+	#'MeetDroidFriends': Viewer( '？？？',121.656853,  31.140631,0,0)
+	'TronLightcyclePowerRun': Viewer( '创极速光轮',121.656807,  31.141859,900,1),
 	'RoaringRapids': Viewer( '雷鸣山漂流', 121.663177,  31.143061,600,1),
 	'ChallengeTrails': Viewer( '古迹探索营的绳索挑战道',121.660767,  31.143658,720,1),
 	'VistaTrail': Viewer( '古迹探索营的探索步行道',121.660767,  31.143658,720,1),
@@ -46,19 +47,19 @@ NAMES = {
 	'EncounterKyloRen': Viewer( '？？？',121.656853,  31.140631,0,0),
 	'MeetDarthVader': Viewer( '？？？',121.656853,  31.140631,0,0),
 	'MillenniumFalcon': Viewer( '？？？',121.656853,  31.140631,0,0),
-    'RexsRCRacer': Viewer( '抱抱龙冲天赛车',121.656548,  31.143299,300,0),
-    'SlinkyDogSpin': Viewer( '弹簧狗团团转',121.660767,  31.143658,300,0),
-    'WoodysRoundUp': Viewer( '胡迪牛仔嘉年华',121.657333,  31.144051,120,0),
+	'RexsRCRacer': Viewer( '抱抱龙冲天赛车',121.656548,  31.143299,300,0),
+	'SlinkyDogSpin': Viewer( '弹簧狗团团转',121.660767,  31.143658,300,0),
+	'WoodysRoundUp': Viewer( '胡迪牛仔嘉年华',121.657333,  31.144051,120,0),
 }
 
 kinds = {
 	'緩速':1,
-    '刺激':2,
-    '水上':3,
-    '黑暗':4,
-    '旋转':5,
-    '学龄前儿童':6,
-    '互动项目':7
+	'刺激':2,
+	'水上':3,
+	'黑暗':4,
+	'旋转':5,
+	'学龄前儿童':6,
+	'互动项目':7
 }
 
 kinds_project = {
@@ -76,32 +77,40 @@ kinds_project = {
 }
 
 class AllName(object):
-    def __init__(self):
-        pass
+	def __init__(self):
+		pass
 
-    def get_kind(self,kind):
-        yes_dict= {}
-        kind_list = kinds_project[kind]
-        for key,value in self.items():
-            if value.name in kind_list:
-                yes_dict[key] = value
+	def get_kind(self,kind):
+		yes_dict= {}
+		kind_list = kinds_project[kind]
+		for key,value in self.items():
+			if value.name in kind_list:
+				yes_dict[key] = value
 
-        return yes_dict
+		return yes_dict
 
-    def translate(self,eng):
-        return NAMES.get(eng).name
-    
-    def getCoor(self,key = None,names=NAMES):
-        if key:
-            item = names[key]
+	def translate(self,eng):
+		return NAMES.get(eng).name
+	
+	def getCoor(self,key = None,names=NAMES):
+		if key:
+			item = names[key]
 
-            return (item.lat,item.lng,key)
-        else:
-            coors = [(item.lat,item.lng,key)
-             for key,item in names.items()]
-            
-            return coors
-    
-    def items(self):
-        return NAMES.items()
+			return (item.lat,item.lng,key)
+		else:
+			coors = [(item.lat,item.lng,key)
+			 for key,item in names.items()]
+			
+			return coors			
+			
+	def items(self):
+		return NAMES.items()
 
+	def get_Coor_Duration(self,key = None,names = NAMES):
+		if key:
+			item = names[key]
+			return (item.lat,item.lng),item.duration
+		else:
+			coors = [((item.lat,item.lng),item.duration)
+			 for key,item in names.items()]
+			return coors

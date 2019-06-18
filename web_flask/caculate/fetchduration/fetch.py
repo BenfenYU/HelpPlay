@@ -4,6 +4,8 @@ import logging,time
 
 import requests,time
 
+from .names import translate
+
 class Attraction(object):
 
     def __init__(self, json_obj):
@@ -27,7 +29,7 @@ class Attraction(object):
         # 1882;entityType=Attraction;destination=shdr
         # attAliceWonderlandMaze;entityType=Attraction;destination=shdr
         self.name = self.id.split(';', 1)[0].replace('att', '')
-        self.zhName = names.translate(self.name)
+        self.zhName = translate(self.name)
 
     def can_fastpass(self):
         if self._fastpass_available and self._fastpass_start_time != 'FASTPASSisNotAvailable':
@@ -95,7 +97,7 @@ def get_wait_time(token):
 
     resp = requests.get('https://apim.shanghaidisneyresort.com/facility-service/theme-parks/desShanghaiDisneyland;'
                         'entityType=theme-park;destination=shdr/wait-times?mobile=true&region=&region=CN',
-                        headers=headers)
+                        headers=headers,verify = False)
     resp.raise_for_status()
 
     

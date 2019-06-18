@@ -9,24 +9,20 @@ from caculate import how_to_play as hp
 
 
 app = Flask(__name__)
-plans = {'1':hp.one_next,'2':hp.one_wish}
 
+# 用户希望得到一个的时间还是一群的时间 
+plans = {'1':hp.one_next,'2':hp.more_next}
 
 @app.route('/')
 def hello():
     return send_file("index.html")
 
-# 为用户选择一个可以最快开始游戏的景点
-@app.route('/plan/plan=<plan>&origin=<lat>,<lng>')
-def plan_later(plan,lat,lng):
-    polyLines = hp.agent(plans[plan],lat,lng)
-
-    return polyLines
-
-# 有大类意愿，用kind传参
-@app.route('/plan/plan=<plan>&origin=<lat>,<lng>&kind=<kind>')
-def plan_line(plan,lat,lng,kind):
-    polyLines = hp.agent(plans[plan],lat,lng,kind)
+# 有大类意愿，用kind传参,plan决定规划下一个还是好几个
+"example: /plan/plan=1&origin=31,120&kind=0"
+"example: /plan/plan=2&origin=31,120&kind=1"
+@app.route('/plan/plan=<plan>&origin=<lat>,<lng>&kind=<k>')
+def plan_line(plan,lat,lng,k):
+    polyLines = hp.agent(plans[plan],lat,lng,int(k))
 
     return polyLines
     
