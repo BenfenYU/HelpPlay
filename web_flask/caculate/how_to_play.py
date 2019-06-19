@@ -8,6 +8,8 @@ KEY = '&key=H6ZBZ-IIEHJ-FGAFO-KCJ67-MPPJT-W3BZG'
 allName = AllName()
 NUMOFMORE = 3
 
+def 
+
 # 分流函数，有无kind决定是否挑选出景点，plan决定只整一个还是一口气整很多个
 def agent(plan,lat,lng,kind):
     orig_location = (float(lat),float(lng))

@@ -116,16 +116,6 @@ def get_wait_time_list():
         else:
             return response
 
-
-def attractions():
-    items = []
-    # 得到等待时间的json
-    raw_json = get_wait_time_list()
-    for entity_json in raw_json['entries']:
-        items.append(Attraction(entity_json))
-
-    return items
-
 def save_to_json():
     raw_json = get_wait_time_list()
     entry_json = raw_json['entries']
@@ -137,12 +127,21 @@ def save_to_json():
     print(type(save_json))
 
 
-# fetch.py
+def attractions(raw_json = None):
+    items = []
+    # 得到等待时间的json
+    raw_json = get_wait_time_list() if not raw_json else raw_json
+    for entity_json in raw_json['entries']:
+        items.append(Attraction(entity_json))
 
-def make_datas(return_now = False):
+    return items
+
+# 获取当前的时间并解析，或者单纯的解析
+def get_now_data(raw_json = None):
+    
     view_waitTime = {}
     datapoints = []
-    for a in attractions():
+    for a in attractions(raw_json = raw_json):
         
         if a.zhName and a.wait_minutes:
             datapoint = {
@@ -157,15 +156,5 @@ def make_datas(return_now = False):
             datapoints.append(datapoint)
 
             view_waitTime[a.name] = float(a.wait_minutes)
-            #logging.info("%s wait: %sm;" % (a.zhName, a.wait_minutes)\
-            #    +" singleRider: {}; FP: {};".format(a.single_rider,a.fastPass))
     
-    if return_now:
-        return view_waitTime
-
-    return datapoints
-
-def get_now_data():
-    view_waitTime = make_datas(return_now=True)
-
     return view_waitTime

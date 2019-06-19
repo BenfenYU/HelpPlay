@@ -1,0 +1,51 @@
+
+{
+	"data": {
+		"filename": "web_flask/LSTM/data/one_dim_time_2.csv",
+		"columns": [
+			"wait_time"
+		],
+		"sequence_length": 81,
+		"train_test_split": 0.85,
+		"normalise": false 
+	},
+	"training": {
+		"epochs": 40,
+		"batch_size": 64
+	},
+	"model": {
+		"loss": "mse",
+		"optimizer": "adam",
+		"matrics": ["accuracy","mae"],
+		"save_dir": "web_flask/LSTM/saved_models",
+		"model_name":"19062019-164900-e40.h5",
+		"layers": [
+			{
+				"type": "lstm",
+				"neurons": 20,
+				"input_timesteps": 80,
+				"input_dim": 1,
+				"return_seq": true
+			},
+			{
+				"type": "lstm",
+				"neurons": 30,
+				"input_timesteps": 80,
+				"input_dim": 1,
+				"return_seq": true
+			},
+			{
+				"type": "lstm",
+				"neurons": 20,
+				"input_timesteps": 80,
+				"input_dim": 1,
+				"return_seq": false
+			},
+			{
+				"type": "dense",
+				"neurons": 1,
+				"activation": "relu"
+			}
+		]
+	}
+}
